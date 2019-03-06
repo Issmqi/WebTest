@@ -18,6 +18,10 @@ class HomeTest(unittest.TestCase):
         self.home.click_product()
         print(self.driver.current_url)
 
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.quit()
+
 if __name__ == '__main__':
     unittest.main()
 

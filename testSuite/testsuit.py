@@ -1,16 +1,19 @@
 import unittest
 import os,sys
 import rootpath
-from case import *
 
 rootPath=rootpath.get_rootpath()
-# curPath=os.path.split(os.path.realpath(__file__))[0]
-# print(curPath)
-# rootPath=os.path.split(curPath)[0]
-# sys.path.append(rootPath)
-casePath=rootPath+'\case'
-print(casePath)
-class TestSuit(object):
 
-    def suite():
-        return unittest.makeSuite(test_home, "test")
+def set_suit():
+    test_dir = rootPath + '\case'
+    suit = unittest.TestSuite()
+    discover = unittest.defaultTestLoader.discover(test_dir, pattern='test*.py', top_level_dir=None)
+    for test_suit in discover:
+        for case in test_suit:
+            suit.addTest(case)
+    return suit
+
+if __name__ == '__main__':
+    suit=set_suit()
+    runner=unittest.TextTestRunner()
+    runner.run(suit)
