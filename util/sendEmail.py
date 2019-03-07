@@ -22,7 +22,7 @@ class SendEmail:
         self.on_off=ReadConfig.get_config("EMAIL","on_off")
     def sendEmail(self,report_address):
         content=self.content.encode('utf-8')
-        print(self.content)
+        # print(self.content)
         if self.on_off=='1':
             try:
                 yag=yagmail.SMTP(user=self.mail_user,password=self.mail_pass,host=self.mail_host,port=self.mail_port)
@@ -35,7 +35,7 @@ class SendEmail:
 def main():
 
     a=SendEmail()
-    a.sendEmail('D:\\PythonWorkspace\\Macy\'s API Test\\testReport\\report\\2018-03-12-10-43-51 report.xlsx')
+    a.sendEmail('c:\\Python\\WebTest\\result\\report\\2019-03-07 15-14-40result.html')
 if __name__=='__main__':
     main()
 

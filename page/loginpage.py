@@ -5,6 +5,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import log
 Log=log.Log()
+# from setLog import Log
+# log=Log()
 import homepage
 import orderpage
 import time
@@ -65,7 +67,7 @@ class LoginPage(basepage.Action):
 
     def login_wait_check(self):
         try:
-            WebDriverWait(self.driver,120).until(EC.presence_of_element_located(('xpath','//*[@id="wm-side"]/ul/li[2]')))
+            WebDriverWait(self.driver,100).until(EC.presence_of_element_located(('xpath','//*[@id="wm-side"]/ul/li[2]')))
             Log.debug('账户登录成功！')
             return True
         except:

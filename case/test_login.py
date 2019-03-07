@@ -12,12 +12,11 @@ class LoginTest(unittest.TestCase):
         cls.driver=webdriver.Chrome()
         cls.url='http://www.raincard.cn/management/login.html'
         cls.login_page = loginpage.LoginPage(cls.driver)
-        print('打开Url')
         cls.login_page.open()
         cls.logout=logout.Logout(cls.driver)
 
     def test_login_mail(self):
-
+        '''验证通过邮箱登陆'''
         self.login_page.input_username('freya@wemart.cn')
         self.login_page.input_password('123456')
         self.login_page.click_submit()
@@ -26,6 +25,7 @@ class LoginTest(unittest.TestCase):
         self.assertTrue(self.login_page.login_wait_check(),'验证邮箱登录失败！')
 
     def test_login_mobile(self):
+        '''验证通过手机号码登录'''
         self.login_page.input_username('13127908386')
         self.login_page.input_password('123456')
         self.login_page.click_submit()
@@ -33,12 +33,12 @@ class LoginTest(unittest.TestCase):
         self.assertTrue(self.login_page.login_wait_check(),'验证手机号码登录失败！')
 
     def test_login_mobile_no_exit(self):
-
+        '''验证未注册的账户登陆'''
         self.login_page.input_username('15954747275')
         self.login_page.input_password('123456')
         self.login_page.click_submit()
-        # self.assertEqual(self.driver.title, '微猫')
-        self.assertFalse(self.login_page.login_wait_check(),'验证未注册的的账户登录失败！')
+        self.assertEqual(self.driver.title, '微猫','验证未注册的的账户登录失败！')
+        # self.assertFalse(self.login_page.login_wait_check(),'验证未注册的的账户登录失败！')
 
     def tearDown(self):
         self.logout.logout()

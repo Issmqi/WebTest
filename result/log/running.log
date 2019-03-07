@@ -25,3 +25,156 @@
 2019-03-06 18:02:06,512 - request - DEBUG - 账户登录失败！
 2019-03-06 18:02:06,512 - request - DEBUG - 账户未登录！
 2019-03-06 18:02:21,380 - request - DEBUG - 账户登录成功！
+2019-03-06 18:21:45,417 - request - DEBUG - 账户登录失败！
+2019-03-06 18:22:30,342 - request - DEBUG - 账户登录成功！
+2019-03-06 18:22:30,519 - request - DEBUG - 账户登录成功！
+2019-03-06 18:22:30,737 - request - DEBUG - 账户退出成功！
+2019-03-06 18:22:32,576 - request - DEBUG - 账户登录成功！
+2019-03-06 18:22:32,586 - request - DEBUG - 账户登录成功！
+2019-03-06 18:22:32,810 - request - DEBUG - 账户退出成功！
+2019-03-06 18:24:33,616 - request - DEBUG - 账户登录失败！
+2019-03-06 18:26:34,105 - request - DEBUG - 账户登录失败！
+2019-03-06 18:26:34,105 - request - DEBUG - 账户未登录！
+2019-03-06 18:26:49,343 - request - DEBUG - 账户登录成功！
+2019-03-07 10:26:28,067 - request - DEBUG - 一个debug信息
+2019-03-07 10:26:28,068 - request - INFO - 一个info信息
+2019-03-07 10:26:28,068 - request - WARNING - 一个warning信息
+2019-03-07 10:26:28,068 - request - ERROR - 一个error信息
+2019-03-07 10:26:28,068 - request - CRITICAL - 一个致命critical信息
+[2019-03-0710:33:24 AM-setLog.py-DEBUG:This is a test]
+2019-03-07 10:36:25,451 - request - DEBUG - 一个debug信息
+2019-03-07 10:36:25,451 - request - INFO - 一个info信息
+2019-03-07 10:36:25,451 - request - WARNING - 一个warning信息
+2019-03-07 10:36:25,451 - request - ERROR - 一个error信息
+2019-03-07 10:36:25,451 - request - CRITICAL - 一个致命critical信息
+2019-03-0710:43:06 AM-WemartTest-INFO:һ��info��Ϣ
+2019-03-0710:43:06 AM-WemartTest-WARNING:һ��warning��Ϣ
+2019-03-0710:43:06 AM-WemartTest-ERROR:һ��error��Ϣ
+2019-03-0710:43:06 AM-WemartTest-CRITICAL:һ������critical��Ϣ
+2019-03-07 10:52:18 - root - INFO: - this is info message
+2019-03-07 10:52:18 - root - WARNING: - this is warn message
+2019-03-07 10:59:16 - root - DEBUG - һ��debug��Ϣcces
+2019-03-07 10:59:16 - root - INFO - һ��info��Ϣ
+2019-03-07 10:59:16 - root - INFO - һ��info��Ϣ
+2019-03-07 10:59:16 - root - WARNING - һ��warning��Ϣ
+2019-03-07 10:59:16 - root - WARNING - һ��warning��Ϣ
+2019-03-07 10:59:16 - root - WARNING - һ��warning��Ϣ
+2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
+2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
+2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
+2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
+2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
+2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
+2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
+2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
+2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
+2019-03-07 11:19:56 - root - DEBUG - 一个debug信息cces
+2019-03-07 11:19:56 - root - INFO - 一个info信息
+2019-03-07 11:19:56 - root - INFO - 一个info信息
+2019-03-07 11:19:56 - root - WARNING - 一个warning信息
+2019-03-07 11:19:56 - root - WARNING - 一个warning信息
+2019-03-07 11:19:56 - root - WARNING - 一个warning信息
+2019-03-07 11:19:56 - root - ERROR - 一个error信息
+2019-03-07 11:19:56 - root - ERROR - 一个error信息
+2019-03-07 11:19:56 - root - ERROR - 一个error信息
+2019-03-07 11:19:56 - root - ERROR - 一个error信息
+2019-03-07 11:19:56 - root - CRITICAL - 一个致命critical信息
+2019-03-07 11:19:56 - root - CRITICAL - 一个致命critical信息
+2019-03-07 11:19:56 - root - CRITICAL - 一个致命critical信息
+2019-03-07 11:19:56 - root - CRITICAL - 一个致命critical信息
+2019-03-07 11:19:56 - root - CRITICAL - 一个致命critical信息
+一个debug信息cces
+一个info信息
+一个info信息
+一个warning信息
+一个warning信息
+一个warning信息
+一个error信息
+一个error信息
+一个error信息
+一个error信息
+一个致命critical信息
+一个致命critical信息
+一个致命critical信息
+一个致命critical信息
+一个致命critical信息
+2019-03-07 11:28:57-WemartTest-INFO-һ��info��Ϣ
+2019-03-07 11:28:57-WemartTest-WARNING-һ��warning��Ϣ
+2019-03-07 11:28:57-WemartTest-ERROR-һ��error��Ϣ
+2019-03-07 11:28:57-WemartTest-CRITICAL-һ������critical��Ϣ
+2019-03-07 11:36:31 - root - DEBUG - 一个debug信息cces
+2019-03-07 11:36:31 - root - INFO - 一个info信息
+2019-03-07 11:36:31 - root - INFO - 一个info信息
+2019-03-07 11:36:31 - root - WARNING - 一个warning信息
+2019-03-07 11:36:31 - root - WARNING - 一个warning信息
+2019-03-07 11:36:31 - root - WARNING - 一个warning信息
+2019-03-07 11:36:31 - root - ERROR - 一个error信息
+2019-03-07 11:36:31 - root - ERROR - 一个error信息
+2019-03-07 11:36:31 - root - ERROR - 一个error信息
+2019-03-07 11:36:31 - root - ERROR - 一个error信息
+2019-03-07 11:36:31 - root - CRITICAL - 一个致命critical信息
+2019-03-07 11:36:31 - root - CRITICAL - 一个致命critical信息
+2019-03-07 11:36:31 - root - CRITICAL - 一个致命critical信息
+2019-03-07 11:36:31 - root - CRITICAL - 一个致命critical信息
+2019-03-07 11:36:31 - root - CRITICAL - 一个致命critical信息
+2019-03-07 11:39:14 - root - DEBUG - 一个debug信息cces
+2019-03-07 11:41:45 - WebTest - DEBUG - 一个debug信息cces
+2019-03-07 11:41:45 - WebTest - INFO - 一个info信息
+2019-03-07 11:41:45 - WebTest - WARNING - 一个warning信息
+2019-03-07 11:41:45 - WebTest - ERROR - 一个error信息
+2019-03-07 11:41:45 - WebTest - CRITICAL - 一个致命critical信息
+2019-03-07 11:42:48 - WebTest - DEBUG - 一个debug信息cces
+2019-03-07 11:42:48 - WebTest - INFO - 一个info信息
+2019-03-07 11:42:48 - WebTest - WARNING - 一个warning信息
+2019-03-07 11:42:48 - WebTest - ERROR - 一个error信息
+2019-03-07 11:42:48 - WebTest - CRITICAL - 一个致命critical信息
+2019-03-07 11:42:53,488 - request - DEBUG - 一个debug信息
+2019-03-07 11:42:53,488 - request - INFO - 一个info信息
+2019-03-07 11:42:53,488 - request - WARNING - 一个warning信息
+2019-03-07 11:42:53,488 - request - ERROR - 一个error信息
+2019-03-07 11:42:53,488 - request - CRITICAL - 一个致命critical信息
+2019-03-07 11:43:17 - WebTest - DEBUG - 一个debug信息cces
+2019-03-07 11:43:17 - WebTest - INFO - 一个info信息
+2019-03-07 11:43:17 - WebTest - WARNING - 一个warning信息
+2019-03-07 11:43:17 - WebTest - ERROR - 一个error信息
+2019-03-07 11:43:17 - WebTest - CRITICAL - 一个致命critical信息
+2019-03-07 13:43:26 - WebTest - DEBUG - 一个debug信息cces
+2019-03-07 13:43:26 - WebTest - INFO - 一个info信息
+2019-03-07 13:43:26 - WebTest - WARNING - 一个warning信息
+2019-03-07 13:43:26 - WebTest - ERROR - 一个error信息
+2019-03-07 13:43:26 - WebTest - CRITICAL - 一个致命critical信息
+2019-03-07 13:45:51,299 - request - DEBUG - 账户登录成功！
+2019-03-07 13:51:31,265 - request - DEBUG - 账户登录成功！
+2019-03-07 14:02:22,768 - request - DEBUG - 账户登录失败！
+2019-03-07 14:03:08,073 - request - DEBUG - 账户登录成功！
+2019-03-07 14:03:08,082 - request - DEBUG - 账户登录成功！
+2019-03-07 14:03:18,240 - request - DEBUG - 账户退出成功！
+2019-03-07 14:03:26,256 - request - DEBUG - 账户登录成功！
+2019-03-07 14:03:26,265 - request - DEBUG - 账户登录成功！
+2019-03-07 14:03:36,413 - request - DEBUG - 账户退出成功！
+2019-03-07 14:05:42,183 - request - DEBUG - 账户登录失败！
+2019-03-07 14:07:42,599 - request - DEBUG - 账户登录失败！
+2019-03-07 14:07:42,599 - request - DEBUG - 账户未登录！
+2019-03-07 14:07:57,454 - request - DEBUG - 账户登录成功！
+2019-03-07 14:43:50,925 - request - DEBUG - 账户登录成功！
+2019-03-07 14:44:05,384 - request - DEBUG - 账户登录成功！
+2019-03-07 14:44:05,394 - request - DEBUG - 账户登录成功！
+2019-03-07 14:44:05,570 - request - DEBUG - 账户退出成功！
+2019-03-07 14:44:07,411 - request - DEBUG - 账户登录成功！
+2019-03-07 14:44:07,421 - request - DEBUG - 账户登录成功！
+2019-03-07 14:44:07,598 - request - DEBUG - 账户退出成功！
+2019-03-07 14:46:08,424 - request - DEBUG - 账户登录失败！
+2019-03-07 14:48:08,871 - request - DEBUG - 账户登录失败！
+2019-03-07 14:48:08,871 - request - DEBUG - 账户未登录！
+2019-03-07 14:48:23,464 - request - DEBUG - 账户登录成功！
+2019-03-07 15:16:24,931 - request - DEBUG - 账户登录失败！
+2019-03-07 15:17:10,070 - request - DEBUG - 账户登录成功！
+2019-03-07 15:17:10,079 - request - DEBUG - 账户登录成功！
+2019-03-07 15:17:10,424 - request - DEBUG - 账户退出成功！
+2019-03-07 15:17:12,306 - request - DEBUG - 账户登录成功！
+2019-03-07 15:17:12,315 - request - DEBUG - 账户登录成功！
+2019-03-07 15:17:12,597 - request - DEBUG - 账户退出成功！
+2019-03-07 15:18:53,598 - request - DEBUG - 账户登录失败！
+2019-03-07 15:18:53,598 - request - DEBUG - 账户未登录！
+2019-03-07 15:19:07,724 - request - DEBUG - 账户登录成功！
+2019-03-07 15:41:12,736 - request - INFO - 邮件发送成功!

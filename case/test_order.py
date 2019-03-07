@@ -21,27 +21,29 @@ class OrderTest(unittest.TestCase):
         self.order_page.enter_orer_menu()
 
     def test_search_order_by_orderid(self):
+        '''通过订单号搜索订单'''
         self.order_page.search_order('82019030417074801037')
         # time.sleep(3)
         self.order_page.get_order_number()
         self.assertEqual(self.order_page.get_order_number(),'1','通过订单号查询订单失败!')
 
     def test_search_order_by_receiver(self):
+        '''通过收货人姓名查询订单'''
         self.order_page.search_order('师孟奇')
         # time.sleep(3)
         self.order_page.get_order_number()
         self.assertEqual(self.order_page.get_order_number(), '1', '通过收货人查询订单失败!')
 
     def test_search_order_by_phone(self):
+        '''通过收货人手机号码查询订单'''
         self.order_page.search_order('13127908386')
         # time.sleep(3)
         self.order_page.get_order_number()
         self.assertEqual(self.order_page.get_order_number(), '1', '通过手机号码查询订单失败!')
 
     def test_import_order(self):
+        '''订单导入操作'''
         self.order_page.import_order()
-
-
 
     @classmethod
     def tearDownClass(cls):

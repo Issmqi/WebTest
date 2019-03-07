@@ -15,8 +15,8 @@ class HomeTest(unittest.TestCase):
 
 
     def test_product(self):
+        '''进入商品模块'''
         self.home.click_product()
-        print(self.driver.current_url)
 
     @classmethod
     def tearDownClass(cls):
