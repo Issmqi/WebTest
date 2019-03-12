@@ -11,6 +11,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/page" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/page" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/case" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/process/thread1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/process/thread2" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
