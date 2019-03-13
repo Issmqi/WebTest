@@ -12,7 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/page" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/case" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.6" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.6.3 (/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="http_json_excel" />
   </component>
