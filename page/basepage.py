@@ -2,6 +2,7 @@ from  selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import readConfig
+import time
 
 class Action(object):
     def __init__(self,driver):
@@ -19,46 +20,106 @@ class Action(object):
         driver.find_element(locator)
 
     '''
-    def find_element(self,timeout=20,*loc):
+    # def find_element(self,timeout=20,*loc):
+    #     try:
+    #         WebDriverWait(self.driver,timeout).until(lambda driver:driver.find_element(*loc).is_displayed())
+    #         return self.driver.find_element(*loc)
+    #     except:
+    #         print("%s 页面中未能找到 %s 元素" % (self,loc))
+    def find_element(self,loc,timeout=20):
         try:
-            WebDriverWait(self.driver,timeout).until(lambda driver:driver.find_element(*loc).is_displayed())
-            return self.driver.find_element(*loc)
+            WebDriverWait(self.driver, timeout, 0.2).until(
+                EC.presence_of_element_located(loc))
+            return self.driver.find_element(loc[0],loc[1])
         except:
-            print("%s 页面中未能找到 %s 元素" % (self,loc))
+            print('元素%s未找到！'%(loc[1]))
+
+    def find_elements(self,loc,timeout=20):
+        try:
+            WebDriverWait(self.driver, timeout, 0.2).until(
+                EC.presence_of_element_located(loc))
+            return self.driver.find_elements(loc[0],loc[1])
+        except:
+            print('元素%s未找到！' % (loc[1]))
+
+
+    # def click(self,loc,timeout=30):
+    #     ele=self.find_element(timeout,*loc)
+    #     try:
+    #         ele.click()
+    #     except:
+    #         pass
+
+    def click(self,loc,timeout=30):
+        ele=self.find_element(loc,timeout)
+        try:
+            ele.click()
+        except:
+            pass
+
+    # def send_keys(self, locator, vaule, time=30,clear_first=True):
+    #     try:
+    #         # loc = getattr(self, "_%s" % loc)
+    #
+    #         # if click_first:
+    #         #     self.find_element(*loc).click()
+    #         ele=self.find_element(time,*locator)
+    #         if clear_first:
+    #             ele.clear()
+    #         ele.send_keys(vaule)
+    #     except AttributeError:
+    #         pass
+    def send_keys(self, locator, vaule, time=20, clear_first=True):
+        try:
+            # loc = getattr(self, "_%s" % loc)
+
+            # if click_first:
+            #     self.find_element(*loc).click()
+            ele = self.find_element(locator,time)
+            if clear_first:
+                ele.clear()
+            ele.send_keys(vaule)
+        except AttributeError:
+            pass
 
     def get_text(self,loc,time=20):
         try:
-            ele = self.find_element(time,*loc)
+            ele = self.find_element(loc,time)
             return ele.text
             # WebDriverWait(self.driver, 20, 0.2).until(
             #     EC.presence_of_element_located(*loc))
             # return self.driver.find_element(*loc).text
         except:
             print("未获取到文本！")
+    # def get_text(self,loc,time=20):
+    #     try:
+    #         ele = self.find_element(time,*loc)
+    #         return ele.text
+    #         # WebDriverWait(self.driver, 20, 0.2).until(
+    #         #     EC.presence_of_element_located(*loc))
+    #         # return self.driver.find_element(*loc).text
+    #     except:
+    #         print("未获取到文本！")
 
     def get_pagesource(self):
         return self.driver.page_source
 
-    def click(self,loc,timeout=30):
-        ele=self.find_element(timeout,*loc)
+    def is_element_exit(self,loc,timeout=20):
+        '''判断元素是否存在'''
         try:
-            ele.click()
+            WebDriverWait(self.driver, timeout, 0.2).until(
+                EC.presence_of_element_located(loc))
+            return True
         except:
-            pass
+            return False
+
+    def highlight(self,element):
+        '''高亮元素'''
+        self.driver.execute_script("arguments[0].setAttribute('style', arguments[1]);",
+                              element, "border: 2px solid red;")
+        time.sleep(3)
 
 
-    def send_keys(self, locator, vaule, time=30,clear_first=True):
-        try:
-            # loc = getattr(self, "_%s" % loc)
-
-            # if click_first:
-            #     self.find_element(*loc).click()
-            ele=self.find_element(time,*locator)
-            if clear_first:
-                ele.clear()
-            ele.send_keys(vaule)
-        except AttributeError:
-            pass
 
 
 

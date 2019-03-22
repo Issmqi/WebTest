@@ -2,21 +2,21 @@ import basepage
 
 class HomePage(basepage.Action):
     HOME_LOC=('xpath','//*[@id="wm-side"]/ul/li[1]/a/div')
-    PRODUCTS_LOC=('xpath','//*[@id="wm-side"]/ul/li[2]')
+    PRODUCTS_LOC=("css selector","a[data-link='a=goods&m=index")
 
-    ORDERS_LOC = ('xpath', '//*[@id="wm-side"]/ul/li[3]/a/div')
-    FINANCE_LOC = ('xpath', '//*[@id="wm-side"]/ul/li[4]/a/div')
-    MARKETING_LOC = ('xpath', '//*[@id="wm-side"]/ul/li[5]/a/div')
-    ANALYTICS_LOC = ('xpath', '//*[@id="wm-side"]/ul/li[6]/a/div')
-    CUSTOMERS_LOC = ('xpath', '//*[@id="wm-side"]/ul/li[7]/a/div')
-    WEBSITE_LOC = ('xpath', '//*[@id="wm-side"]/ul/li[9]/a/div')
-    MINAAPP_LOC = ('xpath', '//*[@id="wm-side"]/ul/li[10]/a/div')
-    RAINCARD_LOC = ('xpath', '//*[@id="wm-side"]/ul/li[11]/a/div')
-    SETTING_LOC = ('xpath', '//*[@id="wm-side"]/ul/li[13]/a/div')
+    ORDERS_LOC = ("css selector","a[data-link='a=order&m=index")
+    FUND_LOC = ("css selector","a=fund&m=index")
+    MARKETING_LOC = ("css selector","a[data-link='a=coupon&m=index")
+    ANALYTICS_LOC = ("css selector","a[data-link='a=statistic&m=flow_analysis")
+    CUSTOMERS_LOC = ("css selector","a[data-link='a=manage_customer&m=index")
+    WEBSITE_LOC = ("css selector","a[data-link='a=shop&m=index")
+    MINAAPP_LOC = ("css selector","a[data-link='a=mini_app&m=index")
+    RAINCARD_LOC = ("css selector","a[data-link='a=raincard&m=index")
+    SETTING_LOC = ("css selector","a[data-link='a=setting_basic&m=index")
     FEEDBACK_LOC=('xpath','//*[@id="wm-main-view"]/div[1]/div[2]/div[1]/a')
     HELP_LOC = ('xpath','//*[@id="wm-main-view"]/div[1]/div[2]/div[2]/a')
     INSTATION_MESSAGE_LOC = ('xpath','//*[@id="wm-main-view"]/div[1]/div[2]/div[3]/div/div[1]/i')
-    PRIVACY_LOC = ('xpath','//*[@id="wm-main-view"]/div[1]/div[2]/div[4]/div/div[1]/i')
+    PRIVACY_LOC = ("css selector","i[title='个人中心']")
 
 
     def click_home(self):
@@ -29,7 +29,7 @@ class HomePage(basepage.Action):
         self.click(self.ORDERS_LOC)
 
     def click_finance(self):
-        self.click(self.FINANCE_LOC)
+        self.click(self.FUND_LOC)
 
     def click_marketing(self):
         self.click(self.MARKETING_LOC)

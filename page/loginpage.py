@@ -67,11 +67,11 @@ class LoginPage(basepage.Action):
 
     def login_wait_check(self):
         try:
-            WebDriverWait(self.driver,100).until(EC.presence_of_element_located(('xpath','//*[@id="wm-side"]/ul/li[2]')))
-            Log.debug('账户登录成功！')
+            WebDriverWait(self.driver,100).until(EC.presence_of_element_located(("css selector","a[data-link='a=goods&m=index")))
+            # Log.debug('账户登录成功！')
             return True
         except:
-            Log.debug('账户登录失败！')
+            # Log.debug('账户登录失败！')
             return False
 
 
@@ -96,10 +96,15 @@ def main():
     # b.click_product()
     o=orderpage.OrderPage(driver)
     o.enter_orer_menu()
-    o.search_order('师孟奇')
-    time.sleep(1)
-    num=o.get_order_number()
-    print(num)
+    # o.search_order('师孟奇')
+    # time.sleep(1)
+    # num=o.get_order_number()
+    # print(num)
+    # o.get_current_page_index()
+    time.sleep(3)
+    # o.select_by_order_status(o.SELECT_UNDELIVERDED_ORDER_LOC)
+    # time.sleep(5)
+    o.send_order_first('3701998226685')
     # o.import_order()
 
 
