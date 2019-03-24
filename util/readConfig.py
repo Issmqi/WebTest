@@ -15,7 +15,8 @@ curPath = os.path.split(os.path.realpath(__file__))[0]   # 获取当前py文件�
 filePath=os.path.split(curPath)[0]
 sys.path.append(filePath)
 # print(filePath)
-configPath = filePath+ "\config\config.ini"         # 组合config文件地址
+configPath = filePath+ "/config/config.ini"
+# configPath = filePath+ "\config\config.ini" # 组合config文件地址
 # print("config.ini的路径是",configPath)
 
 

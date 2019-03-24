@@ -1,10 +1,10 @@
 import basepage
 
 class HomePage(basepage.Action):
-    HOME_LOC=('xpath','//*[@id="wm-side"]/ul/li[1]/a/div')
+    HOME_LOC=('css selector',"a[data-link='a=index&m=index']")
     PRODUCTS_LOC=("css selector","a[data-link='a=goods&m=index")
 
-    ORDERS_LOC = ("css selector","a[data-link='a=order&m=index")
+    ORDERS_LOC = ("css selector","a[data-link='a=order&m=index']")
     FUND_LOC = ("css selector","a=fund&m=index")
     MARKETING_LOC = ("css selector","a[data-link='a=coupon&m=index")
     ANALYTICS_LOC = ("css selector","a[data-link='a=statistic&m=flow_analysis")
@@ -20,7 +20,7 @@ class HomePage(basepage.Action):
 
 
     def click_home(self):
-        self.find_element(self.HOME_LOC).click()
+        self.click(self.HOME_LOC)
 
     def click_product(self):
         self.click(self.PRODUCTS_LOC)

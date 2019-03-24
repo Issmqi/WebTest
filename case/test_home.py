@@ -11,13 +11,15 @@ class HomeTest(unittest.TestCase):
         cls.driver=webdriver.Chrome()
         user=login.Login(cls.driver)
         user.login('freya@wemart.cn','123456')
-        cls.home=homepage.HomePage(cls.driver)
+        cls.home_page=homepage.HomePage(cls.driver)
 
 
     def test_product(self):
         '''进入商品模块'''
-        self.home.click_product()
-
+        self.home_page.click_product()
+    def test_home(self):
+        '''进入主页'''
+        self.home_page.click_home()
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
