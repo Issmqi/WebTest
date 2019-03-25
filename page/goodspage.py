@@ -4,6 +4,7 @@ from  homepage import HomePage
 from selenium import webdriver
 # from goodsdetailpage import GoodsDetailPage
 import time
+import re
 
 class GoodsPage(basepage.Action):
 
@@ -25,9 +26,17 @@ class GoodsPage(basepage.Action):
         self.click(product_loc)
 
     def get_goods_number(self):
-        pass
+        '''获取商品数量'''
+        text=self.get_text(self.GOOGS_NUMBER_LOC)
+        print(text)
+        number=re.findall('共(.+?)件商品',text)
+        goodsNum_str="".join(number)
+        goodsNum=int(goodsNum_str)
+        print(goodsNum)
+        return goodsNum
 
-    def click_add_goods(self):
+
+    def click_create_goods(self):
         '''添加商品'''
         self.click(self.CREATE_BUTTON_LOC)
 def main():
@@ -42,10 +51,11 @@ def main():
     a.click_submit()
     a.login_wait_check()
     g.enter_goods_page()
-    g.create_good()
+    # g.create_good()
     # gd.create_singel_sku_goods()
     # gd.add_sku('尺寸','8英寸','10英寸')
     # time.sleep(10)
+    g.get_goods_number()
 
 
 

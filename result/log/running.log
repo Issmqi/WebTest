@@ -227,3 +227,8 @@
 2019-03-22 18:12:06,266 - request - INFO - 第1个订单发货完成
 2019-03-22 18:13:22,549 - request - INFO - 未发货订单数量为:7
 2019-03-22 18:13:22,890 - request - INFO - 第1个订单发货完成
+2019-03-25 10:48:02,455 - request - DEBUG - 一个debug信息
+2019-03-25 10:48:02,459 - request - INFO - 一个info信息
+2019-03-25 10:48:02,459 - request - WARNING - 一个warning信息
+2019-03-25 10:48:02,459 - request - ERROR - 一个error信息
+2019-03-25 10:48:02,459 - request - CRITICAL - 一个致命critical信息

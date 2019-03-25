@@ -62,7 +62,7 @@ class GoodsDetailPage(goodspage.GoodsPage):
 
     def select_home_img(self,imgName):
         '''上传头图'''
-        self.mouse_release()
+        self.mouse_hover(self.find_element(self.HOME_IMG_PANNEL_LOC))
         self.scroll_into_view(self.HOME_IMG_PANNEL_LOC)
         # self.highlight(self.HOME_IMG_LOC)
         self.click(self.HOME_IMG_PANNEL_LOC)
@@ -70,14 +70,36 @@ class GoodsDetailPage(goodspage.GoodsPage):
         self.sleep(3)
         self.select_source_img(imgName)
 
-    def add_sku(self,skuName,*skuValue):
+    def add_sku(self,i,skuName,*skuValue):
         '''添加sku'''
         self.highlight(self.find_element(self.ADD_SKU_LOC))
         self.click(self.ADD_SKU_LOC)
-        self.send_keys(self.SKU_NAME_LOC, skuName)
+        skuName_eles=self.find_elements(self.SKU_NAME_LOC)
+        skuName_ele=skuName_eles[i-1]
+        skuName_ele.send_keys(skuName)
+        skuValue_eles=self.find_elements(self.SKU_VALUE_LOC)
+        skuValue_ele=skuValue_eles[i-1]
         for value in skuValue:
-            self.send_keys(self.SKU_VALUE_LOC, value, 10, False, True)
-            # self.send_keys(self.SKU_VALUE_LOC, skuValue2, 10, False, True)
+            skuValue_ele.send_keys(value)
+            skuValue_ele.send_keys(Keys.ENTER)
+
+    def add_skus(self,skuForm):
+        '''一次添加所有sku'''
+        # L=[['尺码','s','m','l'],['color','green','pink']]
+        for i in range(len(skuForm)):
+            self.click(self.ADD_SKU_LOC)#点击添加规格
+            skuName_ele= self.find_elements(self.SKU_NAME_LOC)[i]
+            skuValue_ele = self.find_elements(self.SKU_VALUE_LOC)[i]
+            sku_pro=skuForm[i]#这一层的skuName和skuValue
+            skuName=sku_pro[0]
+            skuName_ele.send_keys(skuName)
+            print('第',i,'层skuName是',skuName)
+            skuValues=sku_pro[1:]
+            print('第', i, '层skuValue是', skuValues)
+            for value in skuValues:
+                skuValue_ele.send_keys(value)
+                skuValue_ele.send_keys(Keys.ENTER)
+
 
     def input_sku_price(self):
         '''输入sku价格'''
@@ -128,11 +150,10 @@ class GoodsDetailPage(goodspage.GoodsPage):
 
     def create_no_sku_goods(self):
         '''创建无sku商品'''
-        self.click_add_goods()
+        self.click_create_goods()
         self.input_goods_name('无sku商品')
         self.write_goods_detail('这是个测试商品！')
         self.select_detail_img('芒果慕斯详情')
-
         self.select_home_img('芒果慕斯1')
         self.input_goods_stock('10')
         self.input_goods_price('0.01')
@@ -140,14 +161,43 @@ class GoodsDetailPage(goodspage.GoodsPage):
         self.select_group()
         self.cilck_save()
 
+    def create_goods_without_sku(self,GoodsName,GoodsBrief,DetailImg,HomeImg,GoodsStock,GoodsPrice,GoodsCode):
+        '''创建无sku商品'''
+        self.click_create_goods()
+        self.input_goods_name(GoodsName)
+        self.write_goods_detail(GoodsBrief)
+        # self.select_detail_img(DetailImg)
+        self.select_home_img(HomeImg)
+        self.input_goods_stock(GoodsStock)
+        self.input_goods_price(GoodsPrice)
+        self.input_goods_code(GoodsCode)
+        self.select_group()
+        self.cilck_save()
+
+    def create_goods_with_sku(self,GoodsName,GoodsBrief,DetailImg,HomeImg,SkuForm):
+        '''创建有sku商品'''
+        self.click_create_goods()
+        self.input_goods_name(GoodsName)
+        self.write_goods_detail(GoodsBrief)
+        # self.select_detail_img(DetailImg)
+        self.select_home_img(HomeImg)
+        self.add_skus(SkuForm)
+        self.input_sku_price()
+        self.input_sku_stock()
+        self.input_sku_barcode()
+        self.select_group()
+        self.cilck_save()
+
     def create_one_sku_goods(self):
         '''创建单层单个sku商品'''
-        self.click_add_goods()
+        self.click_create_goods()
         self.input_goods_name('单sku商品')
         self.write_goods_detail('这是个测试商品！')
-        self.select_detail_img('卡百利详情')
         self.select_home_img('卡百利1')
-        self.add_sku('尺寸','8英寸')
+        self.select_detail_img('卡百利详情')
+
+        # self.add_sku(1,'尺寸','8英寸')
+        self.add_skus(['尺寸','8英寸'])
         self.input_sku_price()
         self.input_sku_stock()
         self.input_sku_barcode()
@@ -156,12 +206,13 @@ class GoodsDetailPage(goodspage.GoodsPage):
 
     def create_singel_sku_goods(self):
         '''创建单层多个sku商品'''
-        self.click_add_goods()
+        self.click_create_goods()
         self.input_goods_name('单sku商品')
         self.write_goods_detail('这是个测试商品！')
         self.select_detail_img('卡百利详情')
         self.select_home_img('卡百利4')
-        self.add_sku('尺寸','8英寸','10英寸')
+        # self.add_sku(1,'尺寸','8英寸','10英寸')
+        self.add_skus(['尺寸','8英寸','10英寸'])
         self.input_sku_price()
         self.input_sku_stock()
         self.input_sku_barcode()
@@ -170,13 +221,14 @@ class GoodsDetailPage(goodspage.GoodsPage):
 
     def create_two_sku_good(self):
         '''创建两层sku商品'''
-        self.click_add_goods()
+        self.click_create_goods()
         self.input_goods_name('单sku商品')
         self.write_goods_detail('这是个测试商品！')
         self.select_detail_img('黑森林详情')
         self.select_home_img('黑森林1')
-        self.add_sku('尺寸', '8英寸','10英寸')
-        self.add_sku('送达','当日达','次日达')
+        # self.add_sku(1,'尺寸', '8英寸','10英寸')
+        # self.add_sku(2,'送达','当日达','次日达')
+        self.add_skus([['尺寸', '8英寸','10英寸'],['送达','当日达','次日达']])
         self.input_sku_price()
         self.input_sku_stock()
         self.input_sku_barcode()
@@ -185,14 +237,15 @@ class GoodsDetailPage(goodspage.GoodsPage):
 
     def create_three_sku_good(self):
         '''创建三层sku商品'''
-        self.click_add_goods()
+        self.click_create_goods()
         self.input_goods_name('三层sku商品')
         self.write_goods_detail('这是个测试商品！')
-        self.select_detail_img('浅草详情')
+        # self.select_detail_img('浅草详情')
         self.select_home_img('浅草1')
-        self.add_sku('尺寸', '8英寸','10英寸')
-        self.add_sku('送达','当日达','次日达')
-        self.add_sku('茶','云雾','毛尖')
+        # self.add_sku(1,'尺寸', '8英寸','10英寸')
+        # self.add_sku(2,'送达','当日达','次日达')
+        # self.add_sku(3,'茶','云雾','毛尖')
+        self.add_skus([['尺寸', '8英寸','10英寸'],['送达','当日达','次日达'],['茶','云雾','毛尖']])
         self.input_sku_price()
         self.input_sku_stock()
         self.input_sku_barcode()
@@ -204,7 +257,6 @@ class GoodsDetailPage(goodspage.GoodsPage):
 def main():
     driver=webdriver.Chrome()
     a=loginpage.LoginPage(driver)
-    # g=GoodsPage(driver)
     gd=GoodsDetailPage(driver)
 
     a.open()
@@ -213,12 +265,15 @@ def main():
     a.click_submit()
     a.login_wait_check()
     gd.enter_goods_page()
-    gd.create_no_sku_goods()
-    gd.create_one_sku_goods()
-    gd.create_singel_sku_goods()
-    gd.create_two_sku_good()
-    gd.create_three_sku_good()
-
+    # gd.create_goods_without_sku('无sku商品', '测试无sku商品', '芒果慕斯详情', '芒果慕斯1', '10', '0.01', 'no-0')
+    gd.create_goods_with_sku('两层sku商品', '测试两层sku商品', '黑森林详情', '黑森林1',
+                                                 [['尺寸', '8英寸', '10英寸'], ['送达', '当日达', '次日达']])
+    # gd.create_no_sku_goods()
+    # gd.create_one_sku_goods()
+    # gd.create_singel_sku_goods()
+    # gd.create_two_sku_good()
+    # gd.create_three_sku_good()
+    time.sleep(10)
 
 
 if __name__ == '__main__':
