@@ -28,11 +28,10 @@ class GoodsPage(basepage.Action):
     def get_goods_number(self):
         '''获取商品数量'''
         text=self.get_text(self.GOOGS_NUMBER_LOC)
-        print(text)
         number=re.findall('共(.+?)件商品',text)
         goodsNum_str="".join(number)
         goodsNum=int(goodsNum_str)
-        print(goodsNum)
+        # print(goodsNum)
         return goodsNum
 
 

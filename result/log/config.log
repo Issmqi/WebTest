@@ -36,3 +36,8 @@
 2019-03-23 23:47:07,060 - request - INFO - 第1个未发货订单售后中
 2019-03-23 23:47:07,083 - request - INFO - 第2个未发货订单为拼团订单
 2019-03-23 23:47:07,087 - request - INFO - 第3个未发货订单售后中
+2019-03-25 22:04:49,754 - request - DEBUG - 一个debug信息
+2019-03-25 22:04:49,757 - request - INFO - 一个info信息
+2019-03-25 22:04:49,757 - request - WARNING - 一个warning信息
+2019-03-25 22:04:49,757 - request - ERROR - 一个error信息
+2019-03-25 22:04:49,757 - request - CRITICAL - 一个致命critical信息

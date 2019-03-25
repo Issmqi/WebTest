@@ -58,7 +58,7 @@ class Action(object):
         try:
             ele.click()
         except:
-            pass
+            print('元素%s点击失败! ' % (loc[1]))
 
     # def send_keys(self, locator, vaule, time=30,clear_first=True):
     #     try:
@@ -123,6 +123,12 @@ class Action(object):
         self.driver.execute_script("arguments[0].setAttribute('style', arguments[1]);",
                               element, "border: 2px solid red;")
         time.sleep(3)
+
+    def js_click(self,loc,timeout=20):
+        '''js注入点击事件'''
+        ele = self.find_element(loc, timeout)
+        # element = self.driver.find_element(loc)
+        self.driver.execute_script("arguments[0].click();", ele)
 
     def mouse_hover(self,element):
         '''鼠标悬停'''
