@@ -3,6 +3,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import readConfig
 import time
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+
 
 class Action(object):
     def __init__(self,driver):
@@ -69,7 +72,7 @@ class Action(object):
     #         ele.send_keys(vaule)
     #     except AttributeError:
     #         pass
-    def send_keys(self, locator, vaule, time=20, clear_first=True):
+    def send_keys(self, locator, vaule, time=20, clear_first=True,enter_end=False):
         try:
             # loc = getattr(self, "_%s" % loc)
 
@@ -79,6 +82,8 @@ class Action(object):
             if clear_first:
                 ele.clear()
             ele.send_keys(vaule)
+            if enter_end:
+                ele.send_keys(Keys.ENTER)
         except AttributeError:
             pass
 
@@ -118,6 +123,33 @@ class Action(object):
         self.driver.execute_script("arguments[0].setAttribute('style', arguments[1]);",
                               element, "border: 2px solid red;")
         time.sleep(3)
+
+    def mouse_hover(self,element):
+        '''鼠标悬停'''
+        ActionChains(self.driver).move_to_element(element)
+        time.sleep(3)
+
+    def mouse_double_click(self,element):
+        '''鼠标双击'''
+        ActionChains(self.driver).double_click(element)
+        time.sleep(3)
+
+    def mouse_release(self):
+        '''释放鼠标'''
+        ActionChains(self.driver).release()
+
+    def scroll_into_view(self,loc):
+        '''滚动直到元素可见'''
+        ele=self.driver.find_element(loc[0],loc[1])
+        self.driver.execute_script("arguments[0].scrollIntoView();", ele)
+
+    def get_current_time(self):
+        '''获取当前时间'''
+        curTime=time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()))
+        return curTime
+
+    def sleep(self,s):
+        time.sleep(s)
 
 
 
