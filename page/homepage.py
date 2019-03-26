@@ -2,8 +2,7 @@ import basepage
 
 class HomePage(basepage.Action):
     HOME_LOC=('css selector',"a[data-link='a=index&m=index']")
-    PRODUCTS_LOC=("css selector","a[data-link='a=goods&m=index")
-
+    GOODS_LOC=("css selector","a[data-link='a=goods&m=index")
     ORDERS_LOC = ("css selector","a[data-link='a=order&m=index']")
     FUND_LOC = ("css selector","a=fund&m=index")
     MARKETING_LOC = ("css selector","a[data-link='a=coupon&m=index")
@@ -20,48 +19,63 @@ class HomePage(basepage.Action):
 
 
     def click_home(self):
+        '''点击首页'''
         self.click(self.HOME_LOC)
 
-    def click_product(self):
-        self.click(self.PRODUCTS_LOC)
+    def click_goods(self):
+        '''点击商品模块'''
+        self.click(self.GOODS_LOC)
 
     def click_order(self):
+        '''点击订单模块'''
         self.click(self.ORDERS_LOC)
 
     def click_finance(self):
+        '''点击资金模块'''
         self.click(self.FUND_LOC)
 
     def click_marketing(self):
+        '''点击营销模块'''
         self.click(self.MARKETING_LOC)
 
     def click_analytics(self):
+        '''点击进入数据统计'''
         self.click(self.ANALYTICS_LOC)
 
     def click_customer(self):
+        '''点击进入顾客管理'''
         self.click(self.CUSTOMERS_LOC)
 
     def click_website(self):
+        '''点击进入货架装修'''
         self.click(self.WEBSITE_LOC)
 
     def click_minaapp(self):
+        '''点击进入小程序'''
         self.click(self.MINAAPP_LOC)
 
     def click_raincard(self):
+        '''点击进入raincard'''
         self.click(self.RAINCARD_LOC)
 
     def click_setting(self):
+        '''点击进入店铺设置'''
         self.click(self.SETTING_LOC)
 
     def click_feedback(self):
+        '''进入用户反馈'''
         self.click(self.FEEDBACK_LOC)
 
     def click_help(self):
+        '''d点击进入帮助中心'''
         self.click(self.HELP_LOC)
 
     def click_instation_message(self):
+        '''点击进入消息中心'''
         self.click(self.INSTATION_MESSAGE_LOC)
 
     def click_privacy(self):
+        '''点击进入个人中心'''
         self.click(self.PRIVACY_LOC)
 
 

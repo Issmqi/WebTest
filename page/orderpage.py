@@ -3,9 +3,7 @@ from homepage import HomePage
 from selenium.webdriver.common.keys import Keys
 import re
 import os,sys
-from log import Log
 import time
-log=Log()
 class OrderPage(basepage.Action):
 
 
@@ -166,7 +164,7 @@ class OrderPage(basepage.Action):
         self.select_by_order_status(2)#筛选未发货订单
         undeliverdeOrder_num=int(self.get_order_number())#查询未发货订单数量
         # print('未发货订单数量为:',undeliverdeOrder_num)
-        log.info('未发货订单数量为:%s'%undeliverdeOrder_num)
+        self.log.debug('未发货订单数量为:%s'%undeliverdeOrder_num)
         if undeliverdeOrder_num > 0:
             orderSendBtns=self.find_elements(self.ORDER_SEND_LOCS)
             print(orderSendBtns)
@@ -175,24 +173,24 @@ class OrderPage(basepage.Action):
                 i=i+1
                 # print('第',i+1,'个未发货订单的可发货状态为：',ele.get_attribute('disabled'))
                 if ele.get_attribute('disabled')=='true':
-                    log.info('第%s个未发货订单售后中'%(i))
+                    self.log.info('第%s个未发货订单售后中'%(i))
                 elif ele.text=='管理':
-                    log.info('第%s个未发货订单为拼团订单'%(i))
+                    self.log.info('第%s个未发货订单为拼团订单'%(i))
                 else:
                     order_id=self.get_order_id(i-1)
-                    log.info('订单%s发货'%order_id)
+                    self.log.info('订单%s发货'%order_id)
                     ele.click()
                     self.send_keys(self.INPUT_EXPRESSNUMBER_LOC, express_id)
                     if self.is_element_exit(self.EXPRESS_COM_LOC,30):
                         self.highlight(self.find_element(self.ORDER_SEND_CONFIRM_LOC))
                         self.click(self.ORDER_SEND_CONFIRM_LOC)
-                        log.info('第%s个订单-%s发货完成'%(i,order_id))
+                        self.log.info('第%s个订单-%s发货完成'%(i,order_id))
                         time.sleep(3)
                         status=self.get_order_status(i-1)
                         return status
                         # break
         else:
-            log.info('未发货列表为空')
+            self.log.info('未发货列表为空')
 
 
     def search_order(self,searchkey):

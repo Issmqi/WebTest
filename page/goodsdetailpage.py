@@ -28,7 +28,6 @@ class GoodsDetailPage(goodspage.GoodsPage):
     GOODS_PRICE_LOC = ("css selector", "#min_price")
     GOODS_CODE_LOC = ("css selector", "#bar_code")
     GROUP_LOC = ("css selector", "input[value='438']")
-
     SAVE_GOODS_LOC = ("css selector", ".wm-button.wm-normal-button.wm-button-primary.js-goods-save")
 
 
@@ -41,8 +40,8 @@ class GoodsDetailPage(goodspage.GoodsPage):
 
     def input_goods_name(self,goodsName):
         '''填写商品名称'''
-        # curTime = self.get_current_time()
-        self.send_keys(self.GOODS_NAME_LOC, goodsName)
+        curTime = self.get_current_time()
+        self.send_keys(self.GOODS_NAME_LOC, goodsName+curTime)
 
     def write_goods_detail(self, value):
         '''填写商品详情'''
@@ -68,19 +67,6 @@ class GoodsDetailPage(goodspage.GoodsPage):
         self.js_click(self.HOME_IMG_LOC)
         self.sleep(3)
         self.select_source_img(imgName)
-
-    def add_sku(self,i,skuName,*skuValue):
-        '''添加sku'''
-        self.highlight(self.find_element(self.ADD_SKU_LOC))
-        self.click(self.ADD_SKU_LOC)
-        skuName_eles=self.find_elements(self.SKU_NAME_LOC)
-        skuName_ele=skuName_eles[i-1]
-        skuName_ele.send_keys(skuName)
-        skuValue_eles=self.find_elements(self.SKU_VALUE_LOC)
-        skuValue_ele=skuValue_eles[i-1]
-        for value in skuValue:
-            skuValue_ele.send_keys(value)
-            skuValue_ele.send_keys(Keys.ENTER)
 
     def add_skus(self,skuForm):
         '''一次添加所有sku'''
@@ -176,8 +162,6 @@ class GoodsDetailPage(goodspage.GoodsPage):
         self.input_sku_barcode()
         self.select_group()
         self.cilck_save()
-
-
 
 
 def main():

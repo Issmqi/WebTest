@@ -5,6 +5,7 @@ import readConfig
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
+from log import Log
 
 
 class Action(object):
@@ -12,6 +13,7 @@ class Action(object):
         config=readConfig.ReadConfig()
         self.driver=driver
         self.baseurl=config.get_config('HTTP','host')
+        self.log=Log()
 
     def _open(self):
         self.driver.get(self.baseurl)
@@ -35,7 +37,7 @@ class Action(object):
                 EC.presence_of_element_located(loc))
             return self.driver.find_element(loc[0],loc[1])
         except:
-            print('元素%s未找到！'%(loc[1]))
+            self.log.debug('元素%s未找到！'%(loc[1]))
 
     def find_elements(self,loc,timeout=20):
         try:
@@ -43,68 +45,36 @@ class Action(object):
                 EC.presence_of_element_located(loc))
             return self.driver.find_elements(loc[0],loc[1])
         except:
-            print('元素%s未找到！' % (loc[1]))
-
-
-    # def click(self,loc,timeout=30):
-    #     ele=self.find_element(timeout,*loc)
-    #     try:
-    #         ele.click()
-    #     except:
-    #         pass
+            self.log.debug('元素%s未找到！' % (loc[1]))
 
     def click(self,loc,timeout=30):
         ele=self.find_element(loc,timeout)
         try:
             ele.click()
-        except:
-            print('元素%s点击失败! ' % (loc[1]))
+        except Exception as e:
+            print(e)
+            self.js_click(loc)
 
-    # def send_keys(self, locator, vaule, time=30,clear_first=True):
-    #     try:
-    #         # loc = getattr(self, "_%s" % loc)
-    #
-    #         # if click_first:
-    #         #     self.find_element(*loc).click()
-    #         ele=self.find_element(time,*locator)
-    #         if clear_first:
-    #             ele.clear()
-    #         ele.send_keys(vaule)
-    #     except AttributeError:
-    #         pass
-    def send_keys(self, locator, vaule, time=20, clear_first=True,enter_end=False):
+        # except:
+        #     print('元素%s点击失败! ' % (loc[1]))
+
+    def send_keys(self, loc, vaule, time=20, clear_first=True,enter_end=False):
         try:
-            # loc = getattr(self, "_%s" % loc)
-
-            # if click_first:
-            #     self.find_element(*loc).click()
-            ele = self.find_element(locator,time)
+            ele = self.find_element(loc,time)
             if clear_first:
                 ele.clear()
             ele.send_keys(vaule)
             if enter_end:
                 ele.send_keys(Keys.ENTER)
         except AttributeError:
-            pass
+            self.log.debug('元素%s输入文本失败！' % (loc[1]))
 
     def get_text(self,loc,time=20):
         try:
             ele = self.find_element(loc,time)
             return ele.text
-            # WebDriverWait(self.driver, 20, 0.2).until(
-            #     EC.presence_of_element_located(*loc))
-            # return self.driver.find_element(*loc).text
         except:
-            print("未获取到文本！")
-    # def get_text(self,loc,time=20):
-    #     try:
-    #         ele = self.find_element(time,*loc)
-    #         return ele.text
-    #         # WebDriverWait(self.driver, 20, 0.2).until(
-    #         #     EC.presence_of_element_located(*loc))
-    #         # return self.driver.find_element(*loc).text
-    #     except:
-    #         print("未获取到文本！")
+            self.log.debug('元素%s未获取到文本！' % (loc[1]))
 
     def get_pagesource(self):
         return self.driver.page_source
@@ -124,9 +94,9 @@ class Action(object):
                               element, "border: 2px solid red;")
         time.sleep(3)
 
-    def js_click(self,loc,timeout=20):
+    def js_click(self,loc):
         '''js注入点击事件'''
-        ele = self.find_element(loc, timeout)
+        ele = self.find_element(loc)
         # element = self.driver.find_element(loc)
         self.driver.execute_script("arguments[0].click();", ele)
 

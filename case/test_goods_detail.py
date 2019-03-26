@@ -27,7 +27,7 @@ class CreateGoodsTest(unittest.TestCase):
     def test_create_goods_onetype_sku_one(self):
         '''测试创建单sku商品'''
         before_num = self.goods_detail_page.get_goods_number()
-        self.goods_detail_page.create_goods_with_sku('单sku商品', '测试单sku商品', '卡百利详情', '卡百利1', ['尺寸','8英寸'])
+        self.goods_detail_page.create_goods_with_sku('单sku商品', '测试单sku商品', '卡百利详情', '卡百利1', [['尺寸','8英寸']])
         after_num = self.goods_detail_page.get_goods_number()
         self.assertEqual(before_num, after_num - 1, '创建无sku商品失败！')
 

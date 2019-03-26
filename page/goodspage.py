@@ -22,8 +22,8 @@ class GoodsPage(basepage.Action):
 
     def enter_goods_page(self):
         '''进入商品模块'''
-        product_loc=HomePage.PRODUCTS_LOC
-        self.click(product_loc)
+        home_page=HomePage(self.driver)
+        home_page.click_goods()
 
     def get_goods_number(self):
         '''获取商品数量'''
