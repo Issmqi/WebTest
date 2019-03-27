@@ -41,20 +41,21 @@ class GoodsPage(basepage.Action):
 def main():
     driver=webdriver.Chrome()
     a=loginpage.LoginPage(driver)
-    g=GoodsPage(driver)
-    # gd=GoodsDetailPage(driver)
-
-    a.open()
-    a.input_username('freya@wemart.cn')
-    a.input_password('123456')
-    a.click_submit()
-    a.login_wait_check()
-    g.enter_goods_page()
-    # g.create_good()
-    # gd.create_singel_sku_goods()
-    # gd.add_sku('尺寸','8英寸','10英寸')
-    # time.sleep(10)
-    g.get_goods_number()
+    a.move_time('days',7)
+    # g=GoodsPage(driver)
+    # # gd=GoodsDetailPage(driver)
+    #
+    # a.open()
+    # a.input_username('freya@wemart.cn')
+    # a.input_password('123456')
+    # a.click_submit()
+    # a.login_wait_check()
+    # g.enter_goods_page()
+    # # g.create_good()
+    # # gd.create_singel_sku_goods()
+    # # gd.add_sku('尺寸','8英寸','10英寸')
+    # # time.sleep(10)
+    # g.get_goods_number()
 
 
 

@@ -2,10 +2,12 @@ from  selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import readConfig
-import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from log import Log
+import  datetime
+import time
+from dateutil.relativedelta import relativedelta
 
 
 class Action(object):
@@ -121,8 +123,31 @@ class Action(object):
 
     def get_current_time(self):
         '''获取当前时间'''
+
         curTime=time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(time.time()))
         return curTime
+
+
+    def move_time(self,move_unit,move_qty):
+        '''日期当前时间后移动'''
+        re_time=''
+        move_int=int(move_qty)
+        time_now = datetime.datetime.now()
+        if move_unit=='second':
+            re_time = (time_now + datetime.timedelta(seconds=move_int)).strftime("%Y-%m-%d %H:%M:%S")
+        elif move_unit=='minate':
+            re_time = (time_now + datetime.timedelta(minutes=move_int)).strftime("%Y-%m-%d %H:%M:%S")
+        elif move_unit=='hour':
+            re_time = (time_now + datetime.timedelta(hours=move_int)).strftime("%Y-%m-%d %H:%M:%S")
+        elif move_unit=='day':
+            re_time = (time_now + datetime.timedelta(days=move_int)).strftime("%Y-%m-%d %H:%M:%S")
+        elif move_unit=='week':
+            re_time = (time_now + datetime.timedelta(weeks=move_int)).strftime("%Y-%m-%d %H:%M:%S")
+        # elif move_unit=='year':
+        #     re_time = (time_now + datetime.timedelta(years=move_int)).strftime("%Y-%m-%d %H:%M:%S")
+        # print(time_now)
+        print(re_time)
+        return re_time
 
     def sleep(self,s):
         time.sleep(s)

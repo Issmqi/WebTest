@@ -11,11 +11,17 @@ class FlashPage(basepage.Action):
     CREATE_FLASH_LOC = ('css selector', 'a[data-link="a=flash&m=flash_edit&type=create"]')
     PAGE_INDUX_LOC = ('css selector', '.wm-paging.font-weight-400.flex-container.flex-align-center.flex-justify-end>div')
 
-    # _LOC = ("css selector", "")
-    # _LOC = ("css selector", "")
-    # _LOC = ("css selector", "")
-    # _LOC = ("css selector", "")
-    # _LOC = ("css selector", "")
+    # _LOC = ('css selector', '')
+    # _LOC = ('css selector', '')
+    # _LOC = ('css selector', '')
+    # _LOC = ('css selector', '')
+    # _LOC = ('css selector', '')
+    # _LOC = ('css selector', '')
+    # _LOC = ('css selector', '')
+    # _LOC = ('css selector', '')
+    #
+
+
 
 
 
