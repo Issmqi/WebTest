@@ -128,24 +128,22 @@ class Action(object):
         return curTime
 
 
-    def move_time(self,move_unit,move_qty):
-        '''日期当前时间后移动'''
+    def move_time(self,startTime,move_unit,move_value):
+        '''日期移动'''
         re_time=''
-        move_int=int(move_qty)
-        time_now = datetime.datetime.now()
+        move_int=int(move_value)
+        # start_time = datetime.datetime.now()
+        start_time=datetime.datetime.strptime(startTime,"%Y-%m-%d %H:%M:%S")
         if move_unit=='second':
-            re_time = (time_now + datetime.timedelta(seconds=move_int)).strftime("%Y-%m-%d %H:%M:%S")
+            re_time = (start_time + datetime.timedelta(seconds=move_int)).strftime("%Y-%m-%d %H:%M:%S")
         elif move_unit=='minate':
-            re_time = (time_now + datetime.timedelta(minutes=move_int)).strftime("%Y-%m-%d %H:%M:%S")
+            re_time = (start_time + datetime.timedelta(minutes=move_int)).strftime("%Y-%m-%d %H:%M:%S")
         elif move_unit=='hour':
-            re_time = (time_now + datetime.timedelta(hours=move_int)).strftime("%Y-%m-%d %H:%M:%S")
+            re_time = (start_time + datetime.timedelta(hours=move_int)).strftime("%Y-%m-%d %H:%M:%S")
         elif move_unit=='day':
-            re_time = (time_now + datetime.timedelta(days=move_int)).strftime("%Y-%m-%d %H:%M:%S")
+            re_time = (start_time + datetime.timedelta(days=move_int)).strftime("%Y-%m-%d %H:%M:%S")
         elif move_unit=='week':
-            re_time = (time_now + datetime.timedelta(weeks=move_int)).strftime("%Y-%m-%d %H:%M:%S")
-        # elif move_unit=='year':
-        #     re_time = (time_now + datetime.timedelta(years=move_int)).strftime("%Y-%m-%d %H:%M:%S")
-        # print(time_now)
+            re_time = (start_time + datetime.timedelta(weeks=move_int)).strftime("%Y-%m-%d %H:%M:%S")
         print(re_time)
         return re_time
 

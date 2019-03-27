@@ -41,7 +41,7 @@ class GoodsPage(basepage.Action):
 def main():
     driver=webdriver.Chrome()
     a=loginpage.LoginPage(driver)
-    a.move_time('days',7)
+    a.move_time('2019-03-27 21:44:00','day',-1)
     # g=GoodsPage(driver)
     # # gd=GoodsDetailPage(driver)
     #

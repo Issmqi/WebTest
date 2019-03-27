@@ -1,16 +1,5 @@
 import flashpage
-import  datetime
-import time
-from dateutil.relativedelta import relativedelta
-#以当前时间作为起始点，days=-7向前偏移7天，days=7向后偏移7天
-time_now = datetime.datetime.now()
-print(time_now)
-Time = (time_now+datetime.timedelta(days=7)).strftime("%Y-%m-%d %H:%M:%S")
-print(Time)
-#以当前时间为起始点，偏移一个月
-time_1=(time_now+relativedelta(months=-1)).strftime("%Y-%m-%d %H:%M:%S")
-print(time_1)
-
+import re
 
 
 
@@ -26,7 +15,7 @@ class FlashDetailPage(flashpage.FlashPage):
     GOODS_SELECT_CHECBOX_LOCS = ('css selector', '.wm-checkbox')
     PRE_PAGE_LOC = ('css selector', '.js-page-pre inline-block line-height-1')
     AFTER_PAGE_LOC = ('css selector', '.js-page-next inline-block line-height-1 ')
-    PAGE_INDEX_LOC = ('css selector', '.wm-input-group.inline-block.wm-page-input>input')
+    GOODS_PAGE_INDEX_LOC = ('css selector', '.wm-input-group.inline-block.wm-page-input>input')
     # _LOC = ('css selector', '')
     # _LOC = ('css selector', '')
     # _LOC = ('css selector', '')
@@ -41,6 +30,16 @@ class FlashDetailPage(flashpage.FlashPage):
     def input_flash_time(self):
         '''填写活动周期'''
         curTime=self.get_current_time()
+        startTime=self.move_time(curTime,'minate',5)
+        endTime=self.move_time(startTime,'hour',2)
+        self.send_keys(self.FLAST_START_TIME_LOC,startTime)
+        self.send_keys(self.FLASH_END_TIME_LOC,endTime)
+
+    def select_goods(self):
+        self.click(self.All_GOODS_LIST_LOC)
+        curPage=self.find_element(self.GOODS_PAGE_INDEX_LOC)
+        pageNum=curPage.get_attribute()
+
 
 
 
