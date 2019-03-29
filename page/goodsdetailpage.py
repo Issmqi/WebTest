@@ -41,7 +41,7 @@ class GoodsDetailPage(goodspage.GoodsPage):
     def input_goods_name(self,goodsName):
         '''填写商品名称'''
         curTime = self.get_current_time()
-        self.send_keys(self.GOODS_NAME_LOC, goodsName+curTime)
+        self.send_keys(self.GOODS_NAME_LOC, goodsName)
 
     def write_goods_detail(self, value):
         '''填写商品详情'''

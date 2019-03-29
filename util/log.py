@@ -16,8 +16,8 @@ class Log:
         filePath = os.path.split(curPath)[0] # 获取当前文件的上一层
         # print(filePath)
         sys.path.append(filePath)
-        # logConfigPath=filePath+'\config\log.ini'# 连接目录和文件名
-        logConfigPath = filePath+"/config/log.ini"# 连接目录和文件名
+        logConfigPath=filePath+'\config\log.ini'# 连接目录和文件名
+        # logConfigPath = filePath+"/config/log.ini"# 连接目录和文件名
         # print("log.ini的路径是",logConfigPath)
         logging.config.fileConfig(logConfigPath)
         # create logger
