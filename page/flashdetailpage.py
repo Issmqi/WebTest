@@ -21,7 +21,7 @@ class FlashDetailPage(flashpage.FlashPage):
     FLASH_PRICE_LOC = ('css selector', '.wm-input-group.js-flash-price>input')
     FLASH_STOCK_LOC = ('css selector', '.wm-input-group.js-flash-limit>input')
     SELECT_GOODS_CONFRIM_LOC = ('css selector', '.wm-button.wm-normal-button.wm-button-primary.js-footer-btn-1.js-confirm ')
-    SAVT_BUTTON_LOC = ('css selector', '.save-flash')
+    SAVT_BUTTON_LOC = ('css selector', '#save-flash')
     # _LOC = ('css selector', '')
     # _LOC = ('css selector', '')
     # _LOC = ('css selector', '')
@@ -37,7 +37,7 @@ class FlashDetailPage(flashpage.FlashPage):
         '''填写活动周期'''
         curTime=self.get_current_time()
         startTime=self.move_time(curTime,'minate',5)
-        endTime=self.move_time(startTime,'hour',1)
+        endTime=self.move_time(startTime,'minate',10)
         self.send_keys(self.FLAST_START_TIME_LOC,startTime)
         self.send_keys(self.FLASH_END_TIME_LOC,endTime)
 
