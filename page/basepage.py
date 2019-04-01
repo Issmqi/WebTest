@@ -55,14 +55,16 @@ class Action(object):
             ele.click()
         except Exception as e:
             print(e)
-            self.js_click(loc)
+            self.js_click(ele)
 
         # except:
         #     print('元素%s点击失败! ' % (loc[1]))
 
-    def send_keys(self, loc, vaule, time=20, clear_first=True,enter_end=False):
+    def send_keys(self, loc, vaule, time=20, clear_first=True,enter_end=False,click_first=False):
         try:
             ele = self.find_element(loc,time)
+            if click_first:
+                self.js_click(ele)
             if clear_first:
                 ele.clear()
             ele.send_keys(vaule)
@@ -96,10 +98,9 @@ class Action(object):
                               element, "border: 2px solid red;")
         time.sleep(3)
 
-    def js_click(self,loc):
+    def js_click(self,ele):
         '''js注入点击事件'''
-        ele = self.find_element(loc)
-        # element = self.driver.find_element(loc)
+        # ele = self.find_element(loc)
         self.driver.execute_script("arguments[0].click();", ele)
 
     def mouse_hover(self,element):

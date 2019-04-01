@@ -61,7 +61,7 @@ class PreSaleDetailPage(presalepage.PreSalePage):
 
     def input_deposit_amount(self,depositAmountMoney):
         '''输入定金抵扣金额'''
-        self.send_keys(self.DEPOSIT_AMOUNT_LOC,depositAmountMoney)
+        self.send_keys(self.DEPOSIT_AMOUNT_LOC,depositAmountMoney,20,True,False,True)
 
     def click_full_payment_yes_button(self):
         '''允许尾款支付期间全款'''
