@@ -252,4 +252,33 @@
 2019-03-22 18:12:06,266 - request - INFO - 第1个订单发货完成
 2019-03-22 18:13:22,549 - request - INFO - 未发货订单数量为:7
 2019-03-22 18:13:22,890 - request - INFO - 第1个订单发货完成
+<<<<<<< HEAD
 >>>>>>> dev
+=======
+2019-03-25 10:48:02,455 - request - DEBUG - 一个debug信息
+2019-03-25 10:48:02,459 - request - INFO - 一个info信息
+2019-03-25 10:48:02,459 - request - WARNING - 一个warning信息
+2019-03-25 10:48:02,459 - request - ERROR - 一个error信息
+2019-03-25 10:48:02,459 - request - CRITICAL - 一个致命critical信息
+2019-03-29 14:10:52,389 - request - DEBUG - 一个debug信息
+2019-03-29 14:10:52,391 - request - INFO - 一个info信息
+2019-03-29 14:10:52,391 - request - WARNING - 一个warning信息
+2019-03-29 14:10:52,391 - request - ERROR - 一个error信息
+2019-03-29 14:10:52,392 - request - CRITICAL - 一个致命critical信息
+2019-03-29 18:25:26,829 - request - DEBUG - 元素a[data-link="a=a=flash&m=index"]未找到！
+2019-03-29 18:28:27,689 - request - DEBUG - 元素未找到！
+2019-03-29 18:28:27,689 - request - DEBUG - 元素输入文本失败！
+2019-03-29 18:28:47,741 - request - DEBUG - 元素未找到！
+2019-03-29 18:28:47,741 - request - DEBUG - 元素输入文本失败！
+2019-03-29 18:31:00,691 - request - DEBUG - 元素.wm-search-flash-name未找到！
+2019-03-29 18:31:00,691 - request - DEBUG - 元素.wm-search-flash-name输入文本失败！
+2019-03-29 18:31:30,736 - request - DEBUG - 元素.wm-checkbox未找到！
+2019-03-29 18:33:40,979 - request - DEBUG - 元素.wm-search-flash-name未找到！
+2019-03-29 18:33:40,979 - request - DEBUG - 元素.wm-search-flash-name输入文本失败！
+2019-03-29 18:34:18,622 - request - DEBUG - 元素.save-flash未找到！
+2019-03-29 18:34:38,638 - request - DEBUG - 元素.save-flash未找到！
+2019-03-29 18:37:39,610 - request - DEBUG - 元素.wm-search-flash-name未找到！
+2019-03-29 18:37:39,611 - request - DEBUG - 元素.wm-search-flash-name输入文本失败！
+2019-03-29 18:38:09,703 - request - DEBUG - 元素.wm-checkbox未找到！
+2019-03-29 18:38:29,703 - request - DEBUG - 元素.wm-checkbox未找到！
+>>>>>>> 906d4f5dc722e0a6626042e993fd3a7745eef4c9
