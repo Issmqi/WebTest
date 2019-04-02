@@ -233,3 +233,6 @@
 2019-03-25 10:48:02,459 - request - ERROR - 一个error信息
 2019-03-25 10:48:02,459 - request - CRITICAL - 一个致命critical信息
 
+2019-04-02 11:04:33,833 - request - DEBUG - 元素.wm-button.wm-normal-button.wm-button-primary未找到！
+2019-04-02 15:13:28,611 - request - DEBUG - 元素.wm-button.wm-normal-button.wm-button-primary未找到！
+2019-04-02 17:58:38,656 - request - DEBUG - 元素.wm-button.wm-normal-button.wm-button-primary未找到！

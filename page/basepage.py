@@ -64,7 +64,9 @@ class Action(object):
         try:
             ele = self.find_element(loc,time)
             if clear_first:
+                self.sleep(5)
                 ele.clear()
+
             ele.send_keys(vaule)
             if enter_end:
                 ele.send_keys(Keys.ENTER)
