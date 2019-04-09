@@ -38,10 +38,10 @@ class PreSaleDetailPage(presalepage.PreSalePage):
         '''输入活动中的时间'''
         curTime=self.get_current_time()
         startTime=self.move_time(curTime,'minate',1)
-        depositStartTime=self.move_time(startTime,'minate',1)
+        depositStartTime=self.move_time(startTime,'minate',5)
         depositEndTime = self.move_time(depositStartTime, 'minate', 5)
-        balanceDueStartTime=self.move_time(depositEndTime,'minate',1)
-        balanceDueEndTime = self.move_time(balanceDueStartTime, 'minate', 10)
+        balanceDueStartTime=self.move_time(depositEndTime,'minate',5)
+        balanceDueEndTime = self.move_time(balanceDueStartTime, 'minate', 5)
 
         self.send_keys(self.START_TIME_LOC,startTime)
         self.send_keys(self.DEPOSIT_START_TIME_LOC,depositStartTime)
@@ -62,6 +62,7 @@ class PreSaleDetailPage(presalepage.PreSalePage):
 
     def input_deposit_amount(self,depositAmountMoney):
         '''输入定金抵扣金额'''
+
         self.send_keys(self.DEPOSIT_AMOUNT_LOC,depositAmountMoney)
 
     def click_full_payment_yes_button(self):
@@ -93,8 +94,8 @@ class PreSaleDetailPage(presalepage.PreSalePage):
         '''创建预售'''
         self.input_presale_name(presaleName)
         self.input_presale_time()
-        self.select_goods(goodsName)
         self.input_deposit(depositMoney)
+        self.select_goods(goodsName)
         self.input_deposit_amount(depositAmountMoney)
         self.input_user_participation_limit(userLimit)
         if fullPayment==True:
@@ -119,20 +120,20 @@ def main():
     pd.enter_coupon()
     pd.click_pre_sale()
     pd.click_create_presale_button()
-    pd.create_presale('浅草预售','浅草','0.01','0.98',3,True,5)
-    pd.sleep(100)
-
-    # pd.input_presale_name('up')
-    # pd.input_presale_time()
-    # pd.select_goods('黑森林')
-    # pd.input_deposit('0.01')
-    # pd.input_deposit_amount('0.98')
-    # pd.click_full_payment_yes_button()
-    #
-    # pd.input_limit_count(5)
-    # pd.input_user_participation_limit(3)
-    # pd.click_save()
+    # pd.create_presale('卡百利就是卡百利','卡百利','0.01','0.98',3,False,5)
     # pd.sleep(100)
+
+    pd.input_presale_name('up')
+    pd.input_presale_time()
+    pd.select_goods('黑森林')
+    pd.input_deposit('0.01')
+    pd.input_deposit_amount('0.98')
+    pd.click_full_payment_yes_button()
+
+    pd.input_limit_count(5)
+    pd.input_user_participation_limit(3)
+    pd.click_save()
+    pd.sleep(100)
 
 
 

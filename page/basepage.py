@@ -64,9 +64,11 @@ class Action(object):
         try:
             ele = self.find_element(loc,time)
             if clear_first:
-                self.sleep(5)
-                ele.clear()
-
+                # self.sleep(5)
+                # ele.clear()
+                # self.sleep(5)
+                ele.send_keys(Keys.CONTROL+'a')
+                ele.send_keys(Keys.BACKSPACE)
             ele.send_keys(vaule)
             if enter_end:
                 ele.send_keys(Keys.ENTER)
@@ -103,6 +105,13 @@ class Action(object):
         ele = self.find_element(loc)
         # element = self.driver.find_element(loc)
         self.driver.execute_script("arguments[0].click();", ele)
+
+    # def js_clear(self,ele):
+    #     # ele.sendKeys(Keys.chord(Keys.CONTROL, "a"))
+    #     # ele.sendKeys(Keys.DELETE)
+    #     ele.send_keys(Keys.CONTROL, "a")
+    #     ele.sendKeys(Keys.DELETE)
+
 
     def mouse_hover(self,element):
         '''鼠标悬停'''
