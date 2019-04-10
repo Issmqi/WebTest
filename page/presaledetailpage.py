@@ -120,20 +120,20 @@ def main():
     pd.enter_coupon()
     pd.click_pre_sale()
     pd.click_create_presale_button()
-    # pd.create_presale('卡百利就是卡百利','卡百利','0.01','0.98',3,False,5)
-    # pd.sleep(100)
-
-    pd.input_presale_name('up')
-    pd.input_presale_time()
-    pd.select_goods('黑森林')
-    pd.input_deposit('0.01')
-    pd.input_deposit_amount('0.98')
-    pd.click_full_payment_yes_button()
-
-    pd.input_limit_count(5)
-    pd.input_user_participation_limit(3)
-    pd.click_save()
+    pd.create_presale('新的一天','卡百利','0.01','0.98',3,False,5)
     pd.sleep(100)
+
+    # pd.input_presale_name('up')
+    # pd.input_presale_time()
+    # pd.select_goods('黑森林')
+    # pd.input_deposit('0.01')
+    # pd.input_deposit_amount('0.98')
+    # pd.click_full_payment_yes_button()
+    #
+    # pd.input_limit_count(5)
+    # pd.input_user_participation_limit(3)
+    # pd.click_save()
+    # pd.sleep(100)
 
 
 
