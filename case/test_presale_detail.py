@@ -22,7 +22,7 @@ class PresaleDetailTest(unittest.TestCase):
 
     def test_create_presale(self):
         '''卡百利预售'''
-        self.presale_detail.create_presale('test','黑森林','0.01','0.98',3,False,5)
+        self.presale_detail.create_presale('test','枣糕','0.01','0.18',3,False,5)
         self.presale_detail.sleep(10)
 
     @classmethod
