@@ -155,7 +155,6 @@ class Action(object):
             re_time = (start_time + datetime.timedelta(days=move_int)).strftime("%Y-%m-%d %H:%M:%S")
         elif move_unit=='week':
             re_time = (start_time + datetime.timedelta(weeks=move_int)).strftime("%Y-%m-%d %H:%M:%S")
-        print(re_time)
         return re_time
 
     def sleep(self,s):

@@ -92,6 +92,7 @@ class PreSaleDetailPage(presalepage.PreSalePage):
 
     def create_presale(self,presaleName,goodsName,depositMoney,depositAmountMoney,userLimit=2,fullPayment=False,limitCount=None):
         '''创建预售'''
+        self.click_create_presale_button()
         self.input_presale_name(presaleName)
         self.input_presale_time()
         self.input_deposit(depositMoney)
@@ -117,9 +118,8 @@ def main():
     a.input_password('123456')
     a.click_submit()
     a.login_wait_check()
-    pd.enter_coupon()
-    pd.click_pre_sale()
-    pd.click_create_presale_button()
+    pd.enter_coupon_menu()
+    pd.enter_pre_sale()
     pd.create_presale('新的一天','卡百利','0.01','0.98',3,False,5)
     pd.sleep(100)
 
