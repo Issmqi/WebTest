@@ -25,6 +25,7 @@ class Action(object):
         定位元素，参数locator为元祖类型
         locator = ('id','xxx')
         driver.find_element(locator)
+    
 
     '''
     # def find_element(self,timeout=20,*loc):

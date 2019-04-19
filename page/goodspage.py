@@ -40,6 +40,7 @@ class GoodsPage(basepage.Action):
         self.click(self.CREATE_BUTTON_LOC)
 def main():
     driver=webdriver.Chrome()
+
     a=loginpage.LoginPage(driver)
     a.move_time('2019-03-27 21:44:00','day',-1)
     # g=GoodsPage(driver)
