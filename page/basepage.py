@@ -1,20 +1,21 @@
 from  selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import readConfig
+
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from log import Log
 import  datetime
 import time
+from readConfig import ReadConfig
 from dateutil.relativedelta import relativedelta
 
 
 class Action(object):
     def __init__(self,driver):
-        config=readConfig.ReadConfig()
+        self.config=ReadConfig()
         self.driver=driver
-        self.baseurl=config.get_config('HTTP','host')
+        self.baseurl=self.config.get_config('HTTP','host')
         self.log=Log()
 
     def _open(self):
@@ -56,7 +57,7 @@ class Action(object):
             ele.click()
         except Exception as e:
             print(e)
-            self.js_click(loc)
+            self.js_click(ele)
 
         # except:
         #     print('元素%s点击失败! ' % (loc[1]))
@@ -101,9 +102,9 @@ class Action(object):
                               element, "border: 2px solid red;")
         time.sleep(3)
 
-    def js_click(self,loc):
+    def js_click(self,ele):
         '''js注入点击事件'''
-        ele = self.find_element(loc)
+        # ele = self.find_element(loc)
         # element = self.driver.find_element(loc)
         self.driver.execute_script("arguments[0].click();", ele)
 

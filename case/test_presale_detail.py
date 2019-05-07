@@ -1,6 +1,6 @@
 import unittest
 from selenium import webdriver
-from loginpage import LoginPage
+from login import Login
 from presaledetailpage import PreSaleDetailPage
 
 class PresaleDetailTest(unittest.TestCase):
@@ -8,14 +8,9 @@ class PresaleDetailTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver=webdriver.Chrome()
-        login_page=LoginPage(cls.driver)
+        login=Login(cls.driver)
         cls.presale_detail=PreSaleDetailPage(cls.driver)
-        login_page.open()
-        login_page.input_username('freya@wemart.cn')
-        login_page.input_password('123456')
-        login_page.click_submit()
-        login_page.login_wait_check()
-
+        login.login()
     def setUp(self):
         self.presale_detail.enter_coupon_menu()
         self.presale_detail.enter_pre_sale()

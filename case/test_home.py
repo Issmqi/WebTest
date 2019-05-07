@@ -10,7 +10,7 @@ class HomeTest(unittest.TestCase):
     def setUpClass(cls):
         cls.driver=webdriver.Chrome()
         user=login.Login(cls.driver)
-        user.login('freya@wemart.cn','123456')
+        user.login()
         cls.home_page=homepage.HomePage(cls.driver)
 
 

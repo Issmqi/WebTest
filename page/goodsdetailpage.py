@@ -2,9 +2,11 @@ import basepage
 from selenium import webdriver
 import loginpage
 import time
+from login import Login
 from selenium.webdriver.common.keys import Keys
 import  goodspage
 class GoodsDetailPage(goodspage.GoodsPage):
+
 
     GOODS_NAME_LOC = ("css selector", "#goods_name")
     GOODS_DETAIL_LOC = ("css selector", "#wm-goods-editor")
@@ -26,7 +28,9 @@ class GoodsDetailPage(goodspage.GoodsPage):
     SKU_BARCODE_LOC = ("css selector", ".wm-input.wm-goods-form-barcode")
     GOODS_STOCK_LOC = ("css selector", "#stock")
     GOODS_PRICE_LOC = ("css selector", "#min_price")
-    GOODS_CODE_LOC = ("css selector", "#bar_code")
+    BAR_CODE_LOC = ("css selector", "#bar_code")
+    GOODS_CODE_LOC = ("css selector", "#goods_code")
+    TAX_CODE_LOC = ("css selector", "#tax_code")
     GROUP_LOC = ("css selector", "input[value='438']")
     SAVE_GOODS_LOC = ("css selector", ".wm-button.wm-normal-button.wm-button-primary.js-goods-save")
 
@@ -51,29 +55,38 @@ class GoodsDetailPage(goodspage.GoodsPage):
         '''资源库中选择图片'''
         self.send_keys(self.IMG_SEARCH_INPUT_LOC, imgName, 20, True, True)
         self.highlight(self.find_element(self.IMG_LOC))
-        self.click(self.IMG_LOC)
-        time.sleep(5)
+        # self.click(self.IMG_LOC)
+        # time.sleep(5)
+        # self.click(self.IMG_SELECT_CONFIRM_LOC)
+        imgEles=self.find_elements(self.IMG_LOC)
+        for i in range(4) :
+            ele=imgEles[i]
+            ele.click()
+            time.sleep(1)
+
         self.click(self.IMG_SELECT_CONFIRM_LOC)
 
     def select_detail_img(self,imgName):
         '''上传详情图'''
-        self.js_click(self.DETAIL_IMG_LOC)
+        self.click(self.DETAIL_IMG_LOC)
         self.select_source_img(imgName)
 
     def select_home_img(self,imgName):
         '''上传头图'''
         self.mouse_hover(self.find_element(self.HOME_IMG_PANNEL_LOC))
         self.scroll_into_view(self.HOME_IMG_PANNEL_LOC)
-        self.js_click(self.HOME_IMG_LOC)
+        self.click(self.HOME_IMG_LOC)
         self.sleep(3)
         self.select_source_img(imgName)
+
+
 
     def add_skus(self,skuForm):
         '''一次添加所有sku'''
         # L=[['尺码','s','m','l'],['color','green','pink']]
         # self.click(self.SKU_BOX_LOC)
         for i in range(len(skuForm)):
-            self.js_click(self.ADD_SKU_LOC)
+            self.click(self.ADD_SKU_LOC)
             # self.click(self.ADD_SKU_LOC)#点击添加规格
             self.sleep(3)
             skuName_ele= self.find_elements(self.SKU_NAME_LOC,60)[i]
@@ -123,9 +136,21 @@ class GoodsDetailPage(goodspage.GoodsPage):
         '''输入商品价格'''
         self.send_keys(self.GOODS_PRICE_LOC,goodsPrice)
 
+    def input_bar_code(self, barCode):
+        '''输入bar_code编码'''
+        self.send_keys(self.BAR_CODE_LOC, barCode)
+
     def input_goods_code(self,goodsCode):
-        '''输入商品编码'''
+        '''输入goods_code编码'''
         self.send_keys(self.GOODS_CODE_LOC,goodsCode)
+
+    def input_tax_code(self,taxCode):
+        '''输入tax_code编码'''
+        self.send_keys(self.TAX_CODE_LOC,taxCode)
+
+
+
+
 
     def select_group(self):
         '''选择商品分组'''
@@ -136,7 +161,7 @@ class GoodsDetailPage(goodspage.GoodsPage):
         # saveBtn=self.find_element(self.SAVE_GOODS_LOC)
         self.click(self.SAVE_GOODS_LOC)
 
-    def create_goods_without_sku(self,GoodsName,GoodsBrief,DetailImg,HomeImg,GoodsStock,GoodsPrice,GoodsCode):
+    def create_goods_without_sku(self,GoodsName,GoodsBrief,DetailImg,HomeImg,GoodsStock,GoodsPrice,BarCode,GoodsCode,TaxCode):
         '''创建无sku商品'''
         self.click_create_goods()
         self.input_goods_name(GoodsName)
@@ -145,11 +170,13 @@ class GoodsDetailPage(goodspage.GoodsPage):
         self.select_home_img(HomeImg)
         self.input_goods_stock(GoodsStock)
         self.input_goods_price(GoodsPrice)
+        self.input_bar_code(BarCode)
         self.input_goods_code(GoodsCode)
-        self.select_group()
+        self.input_tax_code(TaxCode)
+        # self.select_group()
         self.cilck_save()
 
-    def create_goods_with_sku(self,GoodsName,GoodsBrief,DetailImg,HomeImg,SkuForm):
+    def create_goods_with_sku(self,GoodsName,GoodsBrief,DetailImg,HomeImg,SkuForm,GoodsCode,TaxCode):
         '''创建有sku商品'''
         self.click_create_goods()
         self.input_goods_name(GoodsName)
@@ -160,25 +187,41 @@ class GoodsDetailPage(goodspage.GoodsPage):
         self.input_sku_price()
         self.input_sku_stock()
         self.input_sku_barcode()
-        self.select_group()
+        self.input_goods_code(GoodsCode)
+        self.input_tax_code(TaxCode)
+        # self.select_group()
         self.cilck_save()
 
 
 def main():
     driver=webdriver.Chrome()
-    a=loginpage.LoginPage(driver)
+    login=Login(driver)
+    # a=loginpage.LoginPage(driver)
     gd=GoodsDetailPage(driver)
 
-    a.open()
-    a.input_username('freya@wemart.cn')
-    a.input_password('123456')
-    a.click_submit()
-    a.login_wait_check()
+    # a.open()
+    # a.input_username('freya@wemart.cn')
+    # a.input_password('123456')
+    # a.click_submit()
+    # a.login_wait_check()
+    login.login()
     gd.enter_goods_page()
     # gd.create_goods_without_sku('无sku商品', '测试无sku商品', '芒果慕斯详情', '芒果慕斯1', '10', '0.01', 'no-0')
-    gd.create_goods_with_sku('两层sku商品', '测试两层sku商品', '黑森林详情', '黑森林1',
-                                                 [['尺寸', '8英寸', '10英寸'], ['送达', '当日达', '次日达']])
-
+    # gd.create_goods_with_sku('碎碎平安', '测试两层sku商品', '碎碎平安详情', '碎碎平安',
+    #                                              [['尺寸', '8英寸', '10英寸'], ['送达', '当日达', '次日达']],'goods_code','taxcode')
+    gd.click_create_goods()
+    gd.input_goods_name('碎碎平安')
+    gd.write_goods_detail('测试两层sku商品')
+    gd.select_detail_img('碎碎平安详情')
+    gd.select_home_img('碎碎平安')
+    gd.add_skus([['尺寸', '8英寸', '10英寸'], ['送达', '当日达', '次日达']])
+    gd.input_sku_price()
+    gd.input_sku_stock()
+    gd.input_sku_barcode()
+    gd.input_goods_code('goods_code')
+    gd.input_tax_code('taxcode')
+    # self.select_group()
+    gd.cilck_save()
 
 
 if __name__ == '__main__':

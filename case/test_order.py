@@ -1,6 +1,7 @@
 import unittest
 from selenium import webdriver
 from loginpage import LoginPage
+from login import Login
 from orderpage import OrderPage
 from homepage import HomePage
 
@@ -9,14 +10,10 @@ class OrderTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver=webdriver.Chrome()
-        login_page=LoginPage(cls.driver)
+        login=Login(cls.driver)
         cls.home_page=HomePage(cls.driver)
         cls.order_page=OrderPage(cls.driver)
-        login_page.open()
-        login_page.input_username('freya@wemart.cn')
-        login_page.input_password('123456')
-        login_page.click_submit()
-        login_page.login_wait_check()
+        login.login()
 
     def setUp(self):
         self.order_page.enter_orer_menu()

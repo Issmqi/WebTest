@@ -242,3 +242,15 @@
 2019-04-09 16:21:26,058 - request - DEBUG - 元素#name输入文本失败！
 2019-04-09 16:21:46,124 - request - DEBUG - 元素#start-time未找到！
 2019-04-09 16:21:51,125 - request - DEBUG - 元素#start-time输入文本失败！
+2019-04-22 10:52:12,821 - request - DEBUG - 元素.js-resource-unit.inline-block.vertical-middle.relative.pointer.wm-m-right-10未找到！
+2019-04-22 11:22:16,453 - request - DEBUG - 元素.wm-button.wm-normal-button.wm-button-primary.js-footer-btn-0.js-confirm未找到！
+2019-04-22 11:27:56,698 - request - DEBUG - 元素input[value='438']未找到！
+2019-04-22 11:31:46,751 - request - DEBUG - 元素input[value='438']未找到！
+2019-04-22 11:46:57,090 - request - DEBUG - 元素validation-username未找到！
+2019-04-22 11:46:57,090 - request - DEBUG - 元素validation-username输入文本失败！
+2019-04-22 11:47:17,145 - request - DEBUG - 元素validation-password未找到！
+2019-04-22 11:47:17,145 - request - DEBUG - 元素validation-password输入文本失败！
+2019-04-22 11:48:07,203 - request - DEBUG - 元素signIn未找到！
+2019-04-22 14:28:11,291 - request - DEBUG - 元素.js-resource-unit.inline-block.vertical-middle.relative.pointer.wm-m-right-10未找到！
+2019-04-22 14:39:58,770 - request - DEBUG - 元素.wm-paging.font-weight-400.flex-container.flex-align-center.flex-justify-end>:nth-child(1)未找到！
+2019-04-22 14:39:58,778 - request - DEBUG - 元素.wm-paging.font-weight-400.flex-container.flex-align-center.flex-justify-end>:nth-child(1)未获取到文本！
