@@ -62,12 +62,7 @@ class PreSaleDetailPage(presalepage.PreSalePage):
 
     def input_deposit_amount(self,depositAmountMoney):
         '''输入定金抵扣金额'''
-<<<<<<< HEAD
-        self.send_keys(self.DEPOSIT_AMOUNT_LOC,depositAmountMoney,20,True,False,True)
-=======
 
-        self.send_keys(self.DEPOSIT_AMOUNT_LOC,depositAmountMoney)
->>>>>>> 30993b53c9058c9ee617a5d2198fcc552c93dcd9
 
     def click_full_payment_yes_button(self):
         '''允许尾款支付期间全款'''
@@ -124,20 +119,23 @@ def main():
     a.login_wait_check()
     pd.enter_coupon_menu()
     pd.enter_pre_sale()
-    pd.create_presale('新的一天','卡百利','0.01','0.98',3,False,5)
-    pd.sleep(100)
-
-    # pd.input_presale_name('up')
-    # pd.input_presale_time()
-    # pd.select_goods('黑森林')
-    # pd.input_deposit('0.01')
-    # pd.input_deposit_amount('0.98')
-    # pd.click_full_payment_yes_button()
-    #
-    # pd.input_limit_count(5)
-    # pd.input_user_participation_limit(3)
-    # pd.click_save()
+    # pd.create_presale('新的一天','卡百利江浙沪包邮','0.01','0.98',3,False,5)
     # pd.sleep(100)
+
+
+
+    pd.click_create_presale_button()
+    pd.input_presale_name('up')
+    pd.input_presale_time()
+    pd.select_goods('黑森林')
+    pd.input_deposit('0.01')
+    pd.input_deposit_amount('0.98')
+    pd.click_full_payment_yes_button()
+
+    pd.input_limit_count(5)
+    pd.input_user_participation_limit(3)
+    pd.click_save()
+    pd.sleep(100)
 
 
 

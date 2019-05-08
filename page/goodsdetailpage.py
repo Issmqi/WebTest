@@ -140,9 +140,7 @@ class GoodsDetailPage(goodspage.GoodsPage):
         '''输入bar_code编码'''
         self.send_keys(self.BAR_CODE_LOC, barCode)
 
-    def input_goods_code(self,goodsCode):
-        '''输入goods_code编码'''
-        self.send_keys(self.GOODS_CODE_LOC,goodsCode)
+
 
     def input_tax_code(self,taxCode):
         '''输入tax_code编码'''
@@ -161,7 +159,7 @@ class GoodsDetailPage(goodspage.GoodsPage):
         # saveBtn=self.find_element(self.SAVE_GOODS_LOC)
         self.click(self.SAVE_GOODS_LOC)
 
-    def create_goods_without_sku(self,GoodsName,GoodsBrief,DetailImg,HomeImg,GoodsStock,GoodsPrice,BarCode,GoodsCode,TaxCode):
+    def create_goods_without_sku(self,GoodsName,GoodsBrief,DetailImg,HomeImg,GoodsStock,GoodsPrice,BarCode,TaxCode):
         '''创建无sku商品'''
         self.click_create_goods()
         self.input_goods_name(GoodsName)
@@ -171,12 +169,11 @@ class GoodsDetailPage(goodspage.GoodsPage):
         self.input_goods_stock(GoodsStock)
         self.input_goods_price(GoodsPrice)
         self.input_bar_code(BarCode)
-        self.input_goods_code(GoodsCode)
         self.input_tax_code(TaxCode)
         # self.select_group()
         self.cilck_save()
 
-    def create_goods_with_sku(self,GoodsName,GoodsBrief,DetailImg,HomeImg,SkuForm,GoodsCode,TaxCode):
+    def create_goods_with_sku(self,GoodsName,GoodsBrief,DetailImg,HomeImg,SkuForm,TaxCode):
         '''创建有sku商品'''
         self.click_create_goods()
         self.input_goods_name(GoodsName)
@@ -187,7 +184,6 @@ class GoodsDetailPage(goodspage.GoodsPage):
         self.input_sku_price()
         self.input_sku_stock()
         self.input_sku_barcode()
-        self.input_goods_code(GoodsCode)
         self.input_tax_code(TaxCode)
         # self.select_group()
         self.cilck_save()

@@ -107,10 +107,8 @@ class Action(object):
     def js_click(self,ele):
         '''js注入点击事件'''
         # ele = self.find_element(loc)
-<<<<<<< HEAD
-=======
+
         # element = self.driver.find_element(loc)
->>>>>>> 30993b53c9058c9ee617a5d2198fcc552c93dcd9
         self.driver.execute_script("arguments[0].click();", ele)
 
     # def js_clear(self,ele):
