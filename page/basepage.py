@@ -1,20 +1,21 @@
 from  selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import readConfig
+
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from log import Log
 import  datetime
 import time
+from readConfig import ReadConfig
 from dateutil.relativedelta import relativedelta
 
 
 class Action(object):
     def __init__(self,driver):
-        config=readConfig.ReadConfig()
+        self.config=ReadConfig()
         self.driver=driver
-        self.baseurl=config.get_config('HTTP','host')
+        self.baseurl=self.config.get_config('HTTP','host')
         self.log=Log()
 
     def _open(self):
@@ -25,6 +26,7 @@ class Action(object):
         定位元素，参数locator为元祖类型
         locator = ('id','xxx')
         driver.find_element(locator)
+    
 
     '''
     # def find_element(self,timeout=20,*loc):
@@ -66,7 +68,11 @@ class Action(object):
             if click_first:
                 self.js_click(ele)
             if clear_first:
-                ele.clear()
+                # self.sleep(5)
+                # ele.clear()
+                # self.sleep(5)
+                ele.send_keys(Keys.CONTROL+'a')
+                ele.send_keys(Keys.BACKSPACE)
             ele.send_keys(vaule)
             if enter_end:
                 ele.send_keys(Keys.ENTER)
@@ -101,7 +107,18 @@ class Action(object):
     def js_click(self,ele):
         '''js注入点击事件'''
         # ele = self.find_element(loc)
+<<<<<<< HEAD
+=======
+        # element = self.driver.find_element(loc)
+>>>>>>> 30993b53c9058c9ee617a5d2198fcc552c93dcd9
         self.driver.execute_script("arguments[0].click();", ele)
+
+    # def js_clear(self,ele):
+    #     # ele.sendKeys(Keys.chord(Keys.CONTROL, "a"))
+    #     # ele.sendKeys(Keys.DELETE)
+    #     ele.send_keys(Keys.CONTROL, "a")
+    #     ele.sendKeys(Keys.DELETE)
+
 
     def mouse_hover(self,element):
         '''鼠标悬停'''
@@ -145,7 +162,6 @@ class Action(object):
             re_time = (start_time + datetime.timedelta(days=move_int)).strftime("%Y-%m-%d %H:%M:%S")
         elif move_unit=='week':
             re_time = (start_time + datetime.timedelta(weeks=move_int)).strftime("%Y-%m-%d %H:%M:%S")
-        print(re_time)
         return re_time
 
     def sleep(self,s):

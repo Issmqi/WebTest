@@ -1,12 +1,10 @@
-from  selenium import webdriver
+
 import loginpage
-import log
-
-log=log.Log()
-
 class Login(loginpage.LoginPage):
 
-    def login(self,account,pwd):
+    def login(self):
+        account=self.config.get_config('HTTP','account')
+        pwd = self.config.get_config('HTTP', 'password')
         self.open()
         self.input_username(account)
         self.input_password(pwd)

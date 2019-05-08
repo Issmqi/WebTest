@@ -47,27 +47,27 @@
 2019-03-07 10:36:25,451 - request - WARNING - 一个warning信息
 2019-03-07 10:36:25,451 - request - ERROR - 一个error信息
 2019-03-07 10:36:25,451 - request - CRITICAL - 一个致命critical信息
-2019-03-0710:43:06 AM-WemartTest-INFO:һ��info��Ϣ
-2019-03-0710:43:06 AM-WemartTest-WARNING:һ��warning��Ϣ
-2019-03-0710:43:06 AM-WemartTest-ERROR:һ��error��Ϣ
-2019-03-0710:43:06 AM-WemartTest-CRITICAL:һ������critical��Ϣ
+2019-03-0710:43:06 AM-WemartTest-INFO:һ��info��Ϣ
+2019-03-0710:43:06 AM-WemartTest-WARNING:һ��warning��Ϣ
+2019-03-0710:43:06 AM-WemartTest-ERROR:һ��error��Ϣ
+2019-03-0710:43:06 AM-WemartTest-CRITICAL:һ������critical��Ϣ
 2019-03-07 10:52:18 - root - INFO: - this is info message
 2019-03-07 10:52:18 - root - WARNING: - this is warn message
-2019-03-07 10:59:16 - root - DEBUG - һ��debug��Ϣcces
-2019-03-07 10:59:16 - root - INFO - һ��info��Ϣ
-2019-03-07 10:59:16 - root - INFO - һ��info��Ϣ
-2019-03-07 10:59:16 - root - WARNING - һ��warning��Ϣ
-2019-03-07 10:59:16 - root - WARNING - һ��warning��Ϣ
-2019-03-07 10:59:16 - root - WARNING - һ��warning��Ϣ
-2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
-2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
-2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
-2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
-2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
-2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
-2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
-2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
-2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
+2019-03-07 10:59:16 - root - DEBUG - һ��debug��Ϣcces
+2019-03-07 10:59:16 - root - INFO - һ��info��Ϣ
+2019-03-07 10:59:16 - root - INFO - һ��info��Ϣ
+2019-03-07 10:59:16 - root - WARNING - һ��warning��Ϣ
+2019-03-07 10:59:16 - root - WARNING - һ��warning��Ϣ
+2019-03-07 10:59:16 - root - WARNING - һ��warning��Ϣ
+2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
+2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
+2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
+2019-03-07 10:59:16 - root - ERROR - һ��error��Ϣ
+2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
+2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
+2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
+2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
+2019-03-07 10:59:16 - root - CRITICAL - һ������critical��Ϣ
 2019-03-07 11:19:56 - root - DEBUG - 一个debug信息cces
 2019-03-07 11:19:56 - root - INFO - 一个info信息
 2019-03-07 11:19:56 - root - INFO - 一个info信息
@@ -98,10 +98,10 @@
 一个致命critical信息
 一个致命critical信息
 一个致命critical信息
-2019-03-07 11:28:57-WemartTest-INFO-һ��info��Ϣ
-2019-03-07 11:28:57-WemartTest-WARNING-һ��warning��Ϣ
-2019-03-07 11:28:57-WemartTest-ERROR-һ��error��Ϣ
-2019-03-07 11:28:57-WemartTest-CRITICAL-һ������critical��Ϣ
+2019-03-07 11:28:57-WemartTest-INFO-һ��info��Ϣ
+2019-03-07 11:28:57-WemartTest-WARNING-һ��warning��Ϣ
+2019-03-07 11:28:57-WemartTest-ERROR-һ��error��Ϣ
+2019-03-07 11:28:57-WemartTest-CRITICAL-һ������critical��Ϣ
 2019-03-07 11:36:31 - root - DEBUG - 一个debug信息cces
 2019-03-07 11:36:31 - root - INFO - 一个info信息
 2019-03-07 11:36:31 - root - INFO - 一个info信息
@@ -179,6 +179,7 @@
 2019-03-07 15:19:07,724 - request - DEBUG - 账户登录成功！
 2019-03-07 15:41:12,736 - request - INFO - 邮件发送成功!
 <<<<<<< HEAD
+<<<<<<< HEAD
 2019-03-11 16:31:27,169 - request - DEBUG - 账户登录失败！
 2019-03-11 16:32:13,216 - request - DEBUG - 账户登录成功！
 2019-03-11 16:32:13,246 - request - DEBUG - 账户登录成功！
@@ -203,6 +204,8 @@
 2019-03-12 15:49:36,459 - request - INFO - 运行完成退出
 2019-03-12 15:49:38,427 - request - INFO - 邮件发送成功!
 =======
+=======
+>>>>>>> 30993b53c9058c9ee617a5d2198fcc552c93dcd9
 2019-03-13 15:22:45,835 - request - DEBUG - 账户登录成功！
 2019-03-13 15:23:24,669 - request - DEBUG - 账户登录成功！
 2019-03-13 17:00:11,112 - request - DEBUG - 账户登录成功！
@@ -260,6 +263,7 @@
 2019-03-25 10:48:02,459 - request - WARNING - 一个warning信息
 2019-03-25 10:48:02,459 - request - ERROR - 一个error信息
 2019-03-25 10:48:02,459 - request - CRITICAL - 一个致命critical信息
+<<<<<<< HEAD
 2019-03-29 14:10:52,389 - request - DEBUG - 一个debug信息
 2019-03-29 14:10:52,391 - request - INFO - 一个info信息
 2019-03-29 14:10:52,391 - request - WARNING - 一个warning信息
@@ -282,3 +286,27 @@
 2019-03-29 18:38:09,703 - request - DEBUG - 元素.wm-checkbox未找到！
 2019-03-29 18:38:29,703 - request - DEBUG - 元素.wm-checkbox未找到！
 >>>>>>> 906d4f5dc722e0a6626042e993fd3a7745eef4c9
+=======
+
+2019-04-02 11:04:33,833 - request - DEBUG - 元素.wm-button.wm-normal-button.wm-button-primary未找到！
+2019-04-02 15:13:28,611 - request - DEBUG - 元素.wm-button.wm-normal-button.wm-button-primary未找到！
+2019-04-02 17:58:38,656 - request - DEBUG - 元素.wm-button.wm-normal-button.wm-button-primary未找到！
+2019-04-03 14:38:47,201 - request - DEBUG - 元素.wm-button.wm-normal-button.wm-button-primary未找到！
+2019-04-03 14:39:07,243 - request - DEBUG - 元素.wm-button.wm-normal-button.wm-button-primary未找到！
+2019-04-09 16:21:21,049 - request - DEBUG - 元素#name未找到！
+2019-04-09 16:21:26,058 - request - DEBUG - 元素#name输入文本失败！
+2019-04-09 16:21:46,124 - request - DEBUG - 元素#start-time未找到！
+2019-04-09 16:21:51,125 - request - DEBUG - 元素#start-time输入文本失败！
+2019-04-22 10:52:12,821 - request - DEBUG - 元素.js-resource-unit.inline-block.vertical-middle.relative.pointer.wm-m-right-10未找到！
+2019-04-22 11:22:16,453 - request - DEBUG - 元素.wm-button.wm-normal-button.wm-button-primary.js-footer-btn-0.js-confirm未找到！
+2019-04-22 11:27:56,698 - request - DEBUG - 元素input[value='438']未找到！
+2019-04-22 11:31:46,751 - request - DEBUG - 元素input[value='438']未找到！
+2019-04-22 11:46:57,090 - request - DEBUG - 元素validation-username未找到！
+2019-04-22 11:46:57,090 - request - DEBUG - 元素validation-username输入文本失败！
+2019-04-22 11:47:17,145 - request - DEBUG - 元素validation-password未找到！
+2019-04-22 11:47:17,145 - request - DEBUG - 元素validation-password输入文本失败！
+2019-04-22 11:48:07,203 - request - DEBUG - 元素signIn未找到！
+2019-04-22 14:28:11,291 - request - DEBUG - 元素.js-resource-unit.inline-block.vertical-middle.relative.pointer.wm-m-right-10未找到！
+2019-04-22 14:39:58,770 - request - DEBUG - 元素.wm-paging.font-weight-400.flex-container.flex-align-center.flex-justify-end>:nth-child(1)未找到！
+2019-04-22 14:39:58,778 - request - DEBUG - 元素.wm-paging.font-weight-400.flex-container.flex-align-center.flex-justify-end>:nth-child(1)未获取到文本！
+>>>>>>> 30993b53c9058c9ee617a5d2198fcc552c93dcd9
