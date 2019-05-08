@@ -87,3 +87,19 @@
 2019-05-08 20:56:27,321 - request - DEBUG - 元素#deposit未找到！
 2019-05-08 20:56:27,321 - request - DEBUG - 元素#deposit输入文本失败！
 2019-05-08 20:56:57,448 - request - DEBUG - 元素.wm-button.wm-flat-button.wm-button-primary.js-select-part-goods 未找到！
+2019-05-08 22:48:37,510 - request - DEBUG - 元素.wm-paging.font-weight-400.flex-container.flex-align-center.flex-justify-end>:nth-child(1)未找到！
+2019-05-08 22:48:37,518 - request - DEBUG - 元素.wm-paging.font-weight-400.flex-container.flex-align-center.flex-justify-end>:nth-child(1)未获取到文本！
+2019-05-08 22:49:02,003 - request - DEBUG - 账户退出成功！
+2019-05-08 22:49:03,589 - request - DEBUG - 账户退出成功！
+2019-05-08 22:50:44,500 - request - DEBUG - 账户未登录！
+2019-05-08 22:51:37,340 - request - DEBUG - 元素//*[@id="wm-main"]/div[1]/div[2]/div[2]/div[4]/div/div[1]未找到！
+2019-05-08 22:51:37,340 - request - DEBUG - 元素//*[@id="wm-main"]/div[1]/div[2]/div[2]/div[4]/div/div[1]未获取到文本！
+2019-05-08 22:52:03,126 - request - DEBUG - 元素//*[@id="wm-main"]/div[1]/div[2]/div[2]/div[4]/div/div[1]未找到！
+2019-05-08 22:52:03,138 - request - DEBUG - 元素//*[@id="wm-main"]/div[1]/div[2]/div[2]/div[4]/div/div[1]未获取到文本！
+2019-05-08 22:52:33,630 - request - INFO - 邮件发送失败！
+2019-05-08 23:37:41,681 - request - INFO - 邮件发送失败！
+2019-05-08 23:38:38,113 - request - INFO - 邮件发送失败！
+2019-05-08 23:40:30,345 - request - INFO - 邮件发送失败！
+2019-05-08 23:41:03,524 - request - INFO - 邮件发送失败！
+2019-05-08 23:43:07,548 - request - INFO - 邮件发送失败！
+2019-05-09 00:00:39,642 - request - INFO - 邮件发送成功!

@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
 import unittest
 import rootpath
 import testsuit
@@ -13,10 +16,12 @@ print(now)
 rootPath=rootpath.get_rootpath()
 # reportPath=rootPath+r'\result\report'+'\\'+now+'result.html'
 reportPath=rootPath+'/result/report'+'/'+now+'result.html'
+print(reportPath)
 fp=open(reportPath,'wb')
-runner=HTMLTestRunner_PY3.HTMLTestRunner(stream=fp,title='测试报告',description=u'用例执行情况')
-runner.run(suit)
-SendEmail().sendEmail(reportPath)
+# runner=HTMLTestRunner_PY3.HTMLTestRunner(stream=fp,title=u'测试报告',description=u'用例执行情况')
+# runner.run(suit)
+# SendEmail().sendEmail(reportPath)
+
 # # 定时任务
 # k=1
 # while k<2:
