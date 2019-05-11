@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
 import unittest
 from selenium import webdriver
 from loginpage import LoginPage

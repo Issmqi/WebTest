@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
 import basepage
 from selenium import webdriver
 import loginpage

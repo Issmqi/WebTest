@@ -1,7 +1,6 @@
 #!/usr/bin/python
-# -*- coding: utf-8 -*-
+#-*- coding: UTF-8 -*-
 
-import unittest
 import rootpath
 import testsuit
 import  time
@@ -18,9 +17,9 @@ rootPath=rootpath.get_rootpath()
 reportPath=rootPath+'/result/report'+'/'+now+'result.html'
 print(reportPath)
 fp=open(reportPath,'wb')
-# runner=HTMLTestRunner_PY3.HTMLTestRunner(stream=fp,title=u'测试报告',description=u'用例执行情况')
-# runner.run(suit)
-# SendEmail().sendEmail(reportPath)
+runner=HTMLTestRunner_PY3.HTMLTestRunner(stream=fp,title=u'测试报告',description=u'用例执行情况')
+runner.run(suit)
+SendEmail().sendEmail(reportPath)
 
 # # 定时任务
 # k=1

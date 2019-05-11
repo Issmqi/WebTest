@@ -1,3 +1,6 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
+
 import presalepage
 from selenium import webdriver
 from loginpage import LoginPage
