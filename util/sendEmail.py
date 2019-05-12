@@ -8,6 +8,7 @@ from log import Log
 ReadConfig=ReadConfig()
 log=Log()
 
+
 class SendEmail:
     def __init__(self):
         '''从配置文件中读取收发邮箱信息'''

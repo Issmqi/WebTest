@@ -1,12 +1,36 @@
 #!/usr/bin/python
 #-*- coding: UTF-8 -*-
+import  time
+import sys
+# sys.path.append(rootPath)
+sys.path.append('/Users/wushishi/Python/WebTest')
+sys.path.append('/Users/wushishi/Python/WebTest/page')
+sys.path.append('/Users/wushishi/Python/WebTest/business')
+sys.path.append('/Users/wushishi/Python/WebTest/util')
+sys.path.append('/Users/wushishi/Python/WebTest/config')
+sys.path.append('/Users/wushishi/Python/WebTest/case')
+sys.path.append('/Users/wushishi/Python/WebTest/testSuite')
+sys.path.append('/Library/Frameworks/Python.framework/Versions/3.6/lib/python36.zip')
+sys.path.append('/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6')
+sys.path.append('/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/lib-dynload')
+sys.path.append('/Users/wushishi/Library/Python/3.6/lib/python/site-packages')
+sys.path.append('/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages')
+
+import testsuit
 
 import rootpath
-import testsuit
-import  time
-import HTMLTestRunner_PY3
-from sendEmail import SendEmail
+# import HTMLTestRunner_PY3
+import HTMLTestRunner_PY333
 from log import Log
+from sendEmail import SendEmail
+
+
+# print(sys.path)
+rootPath=rootpath.get_rootpath()
+
+
+
+
 
 log=Log()
 suit =testsuit.set_suit()
@@ -17,7 +41,7 @@ rootPath=rootpath.get_rootpath()
 reportPath=rootPath+'/result/report'+'/'+now+'result.html'
 print(reportPath)
 fp=open(reportPath,'wb')
-runner=HTMLTestRunner_PY3.HTMLTestRunner(stream=fp,title=u'测试报告',description=u'用例执行情况')
+runner=HTMLTestRunner_PY333.HTMLTestRunner(stream=fp,title=u'测试报告',description=u'用例执行情况')
 runner.run(suit)
 SendEmail().sendEmail(reportPath)
 

@@ -1,3 +1,5 @@
+#!/usr/bin/python
+#-*- coding: UTF-8 -*-
 '''
 
 __author__:'shimengqi'
@@ -8,7 +10,7 @@ __mtime__:2018/8/6
 import logging
 import logging.config
 import sys,os
-from pathlib import Path
+
 
 class Log:
     def __init__(self):
