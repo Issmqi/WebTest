@@ -25,12 +25,6 @@ from log import Log
 from sendEmail import SendEmail
 
 
-# print(sys.path)
-rootPath=rootpath.get_rootpath()
-
-
-
-
 
 log=Log()
 suit =testsuit.set_suit()
